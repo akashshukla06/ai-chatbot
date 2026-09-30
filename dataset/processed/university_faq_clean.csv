@@ -1,0 +1,166 @@
+question,answer,category,intent
+What is the minimum attendance required?,Students should meet the minimum attendance requirement specified by their university regulations before appearing in examinations. Check the latest official attendance rules.,Attendance,attendance_requirement
+How can I check my attendance?,Check your attendance through the official student portal or contact your department office if the attendance record is unavailable.,Attendance,attendance_check
+What happens if my attendance is low?,Low attendance may affect examination eligibility according to university rules. Contact your department for the current procedure and any permitted remedies.,Attendance,low_attendance
+Can attendance be corrected if it is wrong?,"If your attendance record appears incorrect, contact the concerned faculty member or department office and provide supporting information.",Attendance,attendance_correction
+Where can I find attendance rules?,Attendance rules are normally published in university regulations or student handbooks. Check the latest official document.,Attendance,attendance_rules
+Can medical reasons affect attendance eligibility?,Some universities provide procedures for approved medical cases. Submit the required documents to the concerned authority according to current rules.,Attendance,medical_attendance
+How often is attendance updated?,Attendance update frequency depends on the department and institution. Check the student portal or ask the concerned faculty member.,Attendance,attendance_update
+Who should I contact about attendance issues?,Contact the subject faculty member first and then the department office if the issue is not resolved.,Attendance,attendance_contact
+Can I attend the exam with shortage of attendance?,Exam eligibility depends on the current university attendance regulations. Confirm your status with your department before the examination.,Attendance,exam_with_shortage
+Is attendance required in every subject?,Attendance requirements can vary by institution or program. Check the applicable academic regulations for your course.,Attendance,subject_attendance
+When are semester examinations conducted?,Semester examination dates are published in the official academic calendar and examination notices.,Examination,exam_schedule
+Where can I find the exam timetable?,"Check the official examination portal, university website, or latest examination notice for the timetable.",Examination,exam_timetable
+How can I download my admit card?,Admit cards are generally available through the official examination or student portal after the required process is completed.,Examination,admit_card
+What should I do if my admit card has an error?,Contact the examination office or your department immediately and report the incorrect information.,Examination,admit_card_error
+How can I apply for semester exams?,Complete the examination form through the official process within the announced deadline.,Examination,exam_application
+What is the last date for the exam form?,The deadline is announced in the latest official examination notice. Check the notice before submitting the form.,Examination,exam_form_deadline
+Can I submit the exam form after the deadline?,"Late submission, if permitted, depends on current university rules and may involve an additional fee.",Examination,late_exam_form
+What documents are needed for the exam form?,Required documents depend on the university. Common requirements include student details and payment confirmation. Check the current notice.,Examination,exam_form_documents
+Where is my examination centre?,The examination centre is normally printed on the admit card or announced by the examination authority.,Examination,exam_centre
+What should I carry to the examination hall?,"Carry the required admit card and valid identification, along with only the items permitted by the examination rules.",Examination,exam_hall_items
+What are the examination rules?,"Follow the latest examination regulations regarding identity verification, permitted materials, conduct, and submission of answer sheets.",Examination,exam_rules
+What happens if I miss an examination?,Contact the examination office immediately. Any re-examination or special provision depends on the official rules.,Examination,missed_exam
+How can I check my examination result?,Results are generally published on the official university result portal.,Examination,result_check
+When will semester results be released?,The result date depends on the examination authority. Check the official result portal and notices.,Examination,result_date
+How can I apply for revaluation?,Follow the official revaluation application process within the announced deadline.,Examination,revaluation
+How can I apply for a supplementary exam?,"If supplementary examinations are offered, follow the official application procedure and eligibility requirements.",Examination,supplementary_exam
+Can I get a duplicate admit card?,Contact the examination office or use the official portal if a duplicate admit-card facility is provided.,Examination,duplicate_admit_card
+What is the procedure for exam-related complaints?,Submit the complaint to the examination office through the prescribed grievance or application process.,Examination,exam_complaint
+Can I change my examination centre?,Centre changes are subject to examination authority rules and are not always permitted.,Examination,change_exam_centre
+Where can I find previous examination notices?,"Check the university examination portal, notice board, or official document archive.",Examination,old_exam_notices
+Where can I find the syllabus?,The latest syllabus should be available through the official university or department website.,Academics,syllabus
+What subjects are in my semester?,Your semester subjects can be checked in the official curriculum or syllabus for your program and semester.,Academics,semester_subjects
+How can I get course details?,"Check the official curriculum, course catalogue, or department portal for course details.",Academics,course_details
+What are the course credits?,Course credits are specified in the official curriculum for each subject.,Academics,course_credits
+Can I change an elective subject?,Elective changes depend on university and department rules and the available registration period.,Academics,elective_change
+How do I register for courses?,Use the official course-registration portal during the announced registration period.,Academics,course_registration
+What happens if I miss course registration?,Contact the academic or department office immediately to ask whether late registration is permitted.,Academics,late_registration
+How can I drop a course?,Course add/drop is permitted only during the official add/drop period and according to academic rules.,Academics,course_drop
+What is the add/drop period?,The add/drop period is announced in the academic calendar or registration notice.,Academics,add_drop_period
+How can I find my course instructor?,"Check the department timetable, course portal, or faculty directory for the assigned instructor.",Academics,course_instructor
+Where can I find course materials?,Course materials may be available through the learning management system or from the course instructor.,Academics,course_materials
+How can I contact my course teacher?,"Use the official faculty directory, course portal, or department contact information.",Academics,teacher_contact
+What is the academic calendar?,"The academic calendar lists important academic dates such as registration, examinations, breaks, and other scheduled activities.",Academics,academic_calendar
+Where can I download the academic calendar?,Download the latest academic calendar from the official university website or student portal.,Academics,calendar_download
+When does the semester start?,Semester start dates are published in the latest academic calendar.,Academics,semester_start
+When does the semester end?,The semester end date is listed in the official academic calendar.,Academics,semester_end
+What are the university holidays?,Official holidays are listed in the academic calendar or university holiday notice.,Academics,holidays
+Can I repeat a course?,Course repetition depends on academic regulations and your academic status. Contact the academic office for the applicable rule.,Academics,course_repeat
+What is a backlog?,A backlog generally refers to a course or examination requirement that has not yet been successfully completed.,Academics,backlog
+How can I clear a backlog?,Follow the university's examination and course-completion procedure for the applicable backlog.,Academics,clear_backlog
+How can I apply for admission?,"Apply through the official admission portal and follow the published eligibility, document, and fee requirements.",Admissions,admission_process
+What are the admission eligibility requirements?,Eligibility depends on the program and admission cycle. Check the latest official admission notification.,Admissions,admission_eligibility
+Which documents are required for admission?,"Required documents are listed in the official admission notice and may include academic certificates, identification, photographs, and category documents where applicable.",Admissions,admission_documents
+How can I check my admission status?,Use the official admission portal to check your application or admission status.,Admissions,admission_status
+What is the admission deadline?,The deadline is specified in the current official admission notification.,Admissions,admission_deadline
+How can I pay the admission fee?,Use the payment methods provided by the official admission portal.,Admissions,admission_fee_payment
+Can I cancel my admission?,Admission cancellation and any refund depend on the current university policy and published deadlines.,Admissions,admission_cancellation
+How can I get an admission receipt?,Download or request the receipt from the official admission or payment portal after successful payment.,Admissions,admission_receipt
+Can I update my admission information?,"Use the correction facility if provided by the admission authority, or contact the admission office.",Admissions,admission_correction
+Where can I contact the admission office?,Use the official university website for the current admission-office phone number or email address.,Admissions,admission_contact
+Where can I see the fee structure?,The latest fee structure is normally published on the official university or department website.,Fees,fee_structure
+How can I pay my semester fee?,Pay through the official student or fee-payment portal using the available payment methods.,Fees,semester_fee_payment
+What is the fee payment deadline?,Check the latest fee notice or student portal for the current payment deadline.,Fees,fee_deadline
+Can I pay fees in installments?,Installment options depend on the university's current fee policy. Contact the accounts office for confirmation.,Fees,fee_installment
+What happens if I miss the fee deadline?,Late payment consequences depend on university policy and may include a late fee or restriction on services.,Fees,late_fee
+How can I download my fee receipt?,Download the receipt from the official fee portal after successful payment.,Fees,fee_receipt
+My fee payment failed. What should I do?,Check the payment status before making another payment and contact the accounts office or payment support if needed.,Fees,payment_failed
+I was charged twice for a fee. What should I do?,Keep both transaction records and contact the accounts or payment support team for verification and resolution.,Fees,duplicate_payment
+How can I request a fee refund?,Submit a refund request according to the university's current refund policy and required procedure.,Fees,fee_refund
+How can I contact the accounts office?,Use the official university contact directory for the current accounts-office contact details.,Fees,accounts_contact
+What scholarships are available for students?,"Available scholarships depend on the university, government schemes, eligibility criteria, and the current academic year.",Scholarship,scholarship_options
+How can I apply for a scholarship?,Apply through the official scholarship portal or university scholarship office according to the current notification.,Scholarship,scholarship_application
+What are the scholarship eligibility criteria?,"Eligibility varies by scholarship and may include academic performance, income, category, or other requirements.",Scholarship,scholarship_eligibility
+Which documents are required for scholarship application?,Required documents depend on the scheme. Check the latest scholarship notification for the exact list.,Scholarship,scholarship_documents
+What is the scholarship application deadline?,Check the current official scholarship notice or portal for the deadline.,Scholarship,scholarship_deadline
+How can I check scholarship status?,Use the official scholarship portal or contact the scholarship office with your application details.,Scholarship,scholarship_status
+What should I do if my scholarship is rejected?,Review the rejection reason and contact the scholarship authority if an appeal or correction process is available.,Scholarship,scholarship_rejection
+Can I apply for more than one scholarship?,Whether multiple scholarships can be held simultaneously depends on the rules of the relevant schemes.,Scholarship,multiple_scholarships
+How can I correct scholarship application details?,Use the official correction facility if available or contact the scholarship office before the correction deadline.,Scholarship,scholarship_correction
+Who handles scholarship queries?,Scholarship queries are usually handled by the university scholarship or student welfare office.,Scholarship,scholarship_contact
+Who is the head of the department?,The current head of department should be verified from the official department website or faculty directory.,Faculty,hod_information
+How can I find faculty contact information?,Use the official faculty directory or department website for current contact information.,Faculty,faculty_contact
+Where is the department office?,The department office location should be available on the official campus directory or department website.,Faculty,department_location
+What are department office timings?,Department office timings depend on the institution. Check the official office notice or contact the department.,Faculty,department_timing
+How can I contact my academic advisor?,Use the student portal or department faculty directory to identify and contact your assigned advisor.,Faculty,advisor_contact
+How do I meet my academic advisor?,Check the advisor's official availability or contact the department office to arrange an appointment.,Faculty,advisor_meeting
+Who can help me with academic problems?,"Your academic advisor, course instructor, or department office can guide you depending on the issue.",Faculty,academic_help
+How can I submit a request to my department?,Follow the department's official application or student-request procedure.,Faculty,department_request
+Where can I find faculty office hours?,Faculty office hours may be published by the department or shared by the faculty member.,Faculty,faculty_hours
+How can I report a faculty-related issue?,Use the official department grievance or student-support process.,Faculty,faculty_complaint
+What are the library timings?,Library timings should be checked on the official library website or latest library notice.,Library,library_timing
+Where is the university library?,The library location is available through the campus map or official university directory.,Library,library_location
+How can I get a library card?,Follow the library registration process through the library or student portal.,Library,library_card
+How many books can I borrow?,Borrowing limits depend on student category and current library rules.,Library,book_limit
+How long can I keep a borrowed book?,The loan period depends on the library's current borrowing policy.,Library,loan_period
+How can I renew a library book?,"Use the library portal if online renewal is available, subject to library rules.",Library,book_renewal
+What happens if I lose a library book?,Report the loss to the library and follow the current replacement or payment procedure.,Library,lost_book
+How can I search for a book?,"Use the library catalogue or online search system to find books by title, author, or subject.",Library,book_search
+Can I access online journals?,Students may access subscribed journals through the university library portal or authorized network.,Library,online_journals
+How can I contact the library?,Use the official library contact page for current phone and email details.,Library,library_contact
+How can I apply for hostel accommodation?,Apply through the official hostel or student accommodation process during the announced application period.,Hostel,hostel_application
+Who is eligible for hostel accommodation?,"Eligibility depends on university hostel rules, availability, and student category.",Hostel,hostel_eligibility
+What documents are required for hostel application?,Check the latest hostel notice for the required documents and forms.,Hostel,hostel_documents
+What are the hostel fees?,Hostel fees are published in the latest hostel fee notice or official fee structure.,Hostel,hostel_fees
+What are the hostel rules?,"Students must follow the current hostel rules covering residence, conduct, timings, visitors, and facilities.",Hostel,hostel_rules
+What are hostel entry timings?,Entry and exit timings are specified in the current hostel regulations.,Hostel,hostel_timing
+How can I report a hostel problem?,Report the issue to the hostel warden or designated hostel support office.,Hostel,hostel_complaint
+How can I request a hostel room change?,Submit a room-change request according to the hostel administration procedure.,Hostel,room_change
+Can I leave the hostel during holidays?,Holiday leave procedures depend on hostel rules. Follow the required leave or gate-pass process.,Hostel,hostel_leave
+How can I contact the hostel warden?,Use the official hostel notice board or university directory for the current warden contact details.,Hostel,warden_contact
+How does the placement process work?,"The placement process generally includes registration, eligibility checks, company drives, assessments, interviews, and selection according to the placement cell's schedule.",Placement,placement_process
+How can I register for placements?,Register through the official placement cell portal or process when registration opens.,Placement,placement_registration
+What are the placement eligibility criteria?,Eligibility varies by company and university placement rules. Check the current placement notice.,Placement,placement_eligibility
+Where can I find placement notices?,"Check the official placement portal, student portal, or placement-cell announcements.",Placement,placement_notices
+How can I contact the placement cell?,Use the official placement-cell contact information published by the university.,Placement,placement_contact
+Are internships available through the placement cell?,Internship opportunities depend on current company partnerships and placement-cell announcements.,Placement,internship_opportunities
+How can I apply for an internship?,Apply through the official internship or placement process and follow the company-specific instructions.,Placement,internship_application
+What documents are needed for placement registration?,"Common requirements include a resume and academic details, but exact requirements depend on the placement cell.",Placement,placement_documents
+Can students attend multiple placement drives?,"Participation depends on placement policy, company eligibility, and applicable placement rules.",Placement,multiple_drives
+How can I prepare for campus placements?,"Prepare core technical subjects, programming/problem-solving, communication, aptitude, projects, and interview skills.",Placement,placement_preparation
+How can I update my phone number?,"Use the student portal profile-update facility if available, or contact the student administration office.",Student Services,update_phone
+How can I update my email address?,Update your email through the official student portal or contact student administration if editing is restricted.,Student Services,update_email
+I forgot my student portal password. What should I do?,Use the portal's password-reset option or contact technical/student support.,Student Services,password_reset
+How can I get my student ID card?,Follow the official student ID card issuance process through student administration.,Student Services,student_id
+What should I do if I lose my ID card?,Report the lost ID card and request a replacement according to university procedures.,Student Services,lost_id
+How can I get a bonafide certificate?,Apply through the official student administration or certificate-request process.,Student Services,bonafide_certificate
+How can I get a migration certificate?,Request it through the university's official certificate or examination office process.,Student Services,migration_certificate
+How can I get a transcript?,Apply for a transcript through the official examination or academic administration office.,Student Services,transcript
+How can I get a duplicate marksheet?,Submit a duplicate-document request through the examination authority according to current rules.,Student Services,duplicate_marksheet
+How can I raise a student grievance?,Use the official student grievance portal or contact the designated grievance officer.,Student Services,student_grievance
+Where can I find student support services?,Check the university student-services portal or contact the student affairs office.,Student Services,student_support
+How can I contact the student affairs office?,Use the official university directory for the current student-affairs contact details.,Student Services,student_affairs_contact
+Where can I find university forms?,"Official student forms are usually available on the university website, student portal, or concerned department page.",Student Services,forms
+How can I submit a certificate request?,Submit the request through the official certificate service or student administration office.,Student Services,certificate_request
+How can I check my application status?,Use the relevant official portal to track the status of your submitted application.,Student Services,application_status
+How can I access the student portal?,Use the official student-portal URL and your university credentials.,IT Support,portal_access
+I cannot log in to the student portal. What should I do?,"Check your credentials and internet connection, then use password recovery or contact technical support.",IT Support,portal_login_issue
+How can I access the online learning platform?,Use the official learning-management-system link and university credentials.,IT Support,lms_access
+I cannot access my online course.,Check your LMS enrollment and contact the course instructor or technical support if the course is missing.,IT Support,course_access_issue
+How can I reset my LMS password?,Use the LMS password-reset option or contact university IT support.,IT Support,lms_password_reset
+Where can I report a technical issue?,Report technical problems through the official IT helpdesk or support portal.,IT Support,technical_issue
+How can I connect to campus Wi-Fi?,Follow the university's official Wi-Fi setup instructions using your student credentials.,IT Support,wifi_access
+My university email is not working.,"Check the email service status and credentials, then contact the university IT helpdesk.",IT Support,email_issue
+How can I get university software access?,Use the official IT/software-support process for licensed student software.,IT Support,software_access
+Where can I find online classes?,Online classes are normally available through the official learning-management system or course portal.,IT Support,online_classes
+Where can I find the university campus map?,Check the official university website or campus directory for the latest map.,Campus,campus_map
+Where is the student help desk?,The student help-desk location should be listed in the campus directory or student-services information.,Campus,helpdesk_location
+What are the university office hours?,Office hours vary by department. Check the official office notice or contact the relevant department.,Campus,office_hours
+Where can I find campus notices?,"Check official notice boards, the student portal, and the university website.",Campus,campus_notices
+Are there student clubs?,Universities commonly provide student clubs and societies. Check the current student-activities list for available clubs.,Campus,student_clubs
+How can I join a student club?,Follow the club registration or student-activities process announced by the university.,Campus,club_join
+How can I organize a student event?,Submit an event request according to the university's student-activities and permissions process.,Campus,event_request
+Where can I find campus emergency contacts?,Use the official university emergency-contact list or campus security information.,Campus,emergency_contacts
+How can I report a campus facility problem?,Report facility issues to the designated maintenance or campus-support office.,Campus,facility_complaint
+Where can I find transport information?,"Check the official transport office information for routes, timings, and registration.",Campus,transport_info
+Hello,Hello! I am the University Student Support Assistant. How can I help you?,General,greeting
+Hi,Hi! How can I help you with university-related information?,General,greeting
+Good morning,Good morning! What university information do you need?,General,greeting
+Good afternoon,Good afternoon! How can I assist you?,General,greeting
+Good evening,Good evening! What can I help you with?,General,greeting
+Who are you?,I am an AI-powered university student support assistant designed to help with academic and student-service questions.,General,bot_identity
+What can you help me with?,"I can help with university FAQs, examinations, attendance, courses, fees, scholarships, library, hostel, placements, and student services.",General,capabilities
+Thank you,You're welcome! Let me know if you need any other university information.,General,thanks
+Thanks for your help,You're welcome! I'm happy to help.,General,thanks
+Goodbye,Goodbye! Have a great day.,General,goodbye

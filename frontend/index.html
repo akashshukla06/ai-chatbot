@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ABES Student Support AI Portal</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ================= HEADER ================= -->
+
+    <header class="top-header">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                🎓
+            </div>
+
+            <div>
+                <h1>ABES Student Support AI</h1>
+                <p>AI-Powered Student Assistance Portal</p>
+            </div>
+
+        </div>
+
+
+        <div class="header-actions">
+
+            <button
+                id="themeButton"
+                class="icon-button"
+                title="Toggle dark mode"
+            >
+                🌙
+            </button>
+
+            <button
+                id="clearChatButton"
+                class="header-button"
+            >
+                🗑️ Clear Chat
+            </button>
+
+            <button
+                id="logoutButton"
+                class="header-button logout-button"
+            >
+                Logout
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- ================= MAIN CONTAINER ================= -->
+
+    <main class="main-container">
+
+
+        <!-- ================= WELCOME SECTION ================= -->
+
+        <section class="welcome-section">
+
+            <div class="welcome-content">
+
+                <span class="welcome-badge">
+                    🟢 AI Assistant Online
+                </span>
+
+                <h2>
+                    Welcome to ABES Student Support 👋
+                </h2>
+
+                <p>
+                    Get quick assistance with ABES courses,
+                    academics, examinations, attendance,
+                    scholarships, student services and more.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= DASHBOARD CARDS ================= -->
+
+        <section class="dashboard-grid">
+
+            <div class="dashboard-card">
+
+                <div class="card-icon attendance-icon">
+                    📊
+                </div>
+
+                <div>
+                    <h3>Attendance</h3>
+                    <p>Check your attendance information</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📚
+                </div>
+
+                <div>
+                    <h3>Subjects</h3>
+                    <p>View your academic subjects</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📝
+                </div>
+
+                <div>
+                    <h3>Examinations</h3>
+                    <p>Check examination information</p>
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-card">
+
+                <div class="card-icon">
+                    📢
+                </div>
+
+                <div>
+                    <h3>Notices</h3>
+                    <p>View important student notices</p>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ================= CHATBOT ================= -->
+
+        <section class="chat-section">
+
+
+            <!-- Chat Header -->
+
+            <div class="chat-header">
+
+                <div class="bot-profile">
+
+                    <div class="bot-avatar">
+                        🤖
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            ABES AI Student Assistant
+                        </h2>
+
+                        <span class="online-status">
+                            <span class="status-dot"></span>
+                            Ready to help
+                        </span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= CHAT BOX ================= -->
+
+            <div
+                class="chat-box"
+                id="chatBox"
+            >
+
+                <div class="message bot-message">
+
+                    <div class="message-avatar">
+                        🤖
+                    </div>
+
+                    <div class="message-content">
+
+                        <strong>
+                            ABES AI Assistant
+                        </strong>
+
+                        <p>
+                            Hello! 👋
+                        </p>
+
+                        <p>
+                            I am your ABES Student Support Assistant.
+                            You can ask me about courses, academics,
+                            examinations, attendance, scholarships,
+                            hostel, library and other student services.
+                        </p>
+
+                        <p>
+                            How can I help you today?
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= QUICK QUESTIONS ================= -->
+
+            <div class="quick-section">
+
+                <p class="quick-title">
+                    ⚡ Quick Questions
+                </p>
+
+                <div class="quick-buttons">
+
+                    <button
+                        class="quick-question"
+                        data-question="What courses does ABES offer?"
+                    >
+                        🎓 ABES Courses
+                    </button>
+
+                    <button
+                        class="quick-question"
+                        data-question="Where is ABES Engineering College located?"
+                    >
+                        📍 ABES Location
+                    </button>
+
+                    <button
+                        class="quick-question"
+                        data-question="Where can I find the academic calendar?"
+                    >
+                        📅 Academic Calendar
+                    </button>
+
+                    <button
+                        class="quick-question"
+                        data-question="What scholarships are available?"
+                    >
+                        🎓 Scholarships
+                    </button>
+
+                    <button
+                        class="quick-question"
+                        data-question="How can I check my attendance?"
+                    >
+                        📊 Attendance
+                    </button>
+
+                    <button
+                        class="quick-question"
+                        data-question="What examination information is available?"
+                    >
+                        📝 Examinations
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ================= INPUT ================= -->
+
+            <div class="input-area">
+
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask anything about ABES..."
+                    autocomplete="off"
+                >
+
+                <button
+                    id="sendButton"
+                    type="button"
+                >
+                    Send ➤
+                </button>
+
+            </div>
+
+
+            <div class="input-hint">
+                Press <strong>Enter</strong> to send your question
+            </div>
+
+
+        </section>
+
+
+        <!-- ================= OFFICIAL RESOURCES ================= -->
+
+        <section class="resources-section">
+
+            <div class="section-heading">
+
+                <h2>
+                    🔗 ABES Official Resources
+                </h2>
+
+                <p>
+                    Useful links for ABES students
+                </p>
+
+            </div>
+
+
+            <div class="resources-grid">
+
+                <a
+                    href="https://www.abes.ac.in/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="resource-card"
+                >
+
+                    <span>🌐</span>
+
+                    <div>
+                        <h3>Official Website</h3>
+                        <p>Visit the official ABES website</p>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="https://www.abes.ac.in/courses-offered.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="resource-card"
+                >
+
+                    <span>🎓</span>
+
+                    <div>
+                        <h3>Courses</h3>
+                        <p>Explore courses offered by ABES</p>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="https://www.abes.ac.in/Academic-Calender.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="resource-card"
+                >
+
+                    <span>📅</span>
+
+                    <div>
+                        <h3>Academic Calendar</h3>
+                        <p>View academic calendar information</p>
+                    </div>
+
+                </a>
+
+
+                <a
+                    href="https://www.abes.ac.in/circulars.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="resource-card"
+                >
+
+                    <span>📢</span>
+
+                    <div>
+                        <h3>Circulars & Notices</h3>
+                        <p>View official ABES notices</p>
+                    </div>
+
+                </a>
+
+            </div>
+
+        </section>
+
+
+    </main>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer class="footer">
+
+        <h3>
+            🎓 ABES Student Support AI Portal
+        </h3>
+
+        <p>
+            AI-powered student assistance for ABES Engineering College
+        </p>
+
+        <div class="technology-tags">
+
+            <span>FastAPI</span>
+            <span>MySQL</span>
+            <span>Semantic Search</span>
+            <span>Gemini AI</span>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 ABES Student Support AI Portal
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

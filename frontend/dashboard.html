@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABES Student Support AI Portal | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body class="theme-light">
+
+    <!-- Top Navigation Bar -->
+    <header class="navbar">
+        <div class="nav-brand">
+            <div class="brand-logo">🎓</div>
+            <div class="brand-text">
+                <span class="brand-title">ABES Student Support AI</span>
+                <span class="brand-sub">ABES Engineering College, Ghaziabad</span>
+            </div>
+        </div>
+
+        <nav class="nav-links">
+            <button class="nav-btn active" onclick="scrollToTop()">
+                <span>🏠 Home</span>
+            </button>
+            <button class="nav-btn" onclick="openModal('profileModal')">
+                <span>👤 Profile</span>
+            </button>
+            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+                <span id="themeIcon">🌙</span>
+            </button>
+            <button class="nav-btn logout-btn" id="logoutBtn" onclick="handleLogout()" title="Sign out of portal">
+                <span>🚪 Logout</span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Main Container -->
+    <main class="dashboard-container">
+
+        <!-- Welcome Banner -->
+        <section class="welcome-card">
+            <div class="welcome-content">
+                <div class="welcome-badge">ABESEC Student Portal • AKTU Affiliated</div>
+                <h1 id="welcomeHeading">👋 Welcome back, Student!</h1>
+                <p class="welcome-sub">How can I help you today?</p>
+                <div class="student-meta-bar" id="studentMetaBar">
+                    <span class="meta-pill" id="metaStudentId">ID: Loading...</span>
+                    <span class="meta-pill" id="metaCourse">Course: Loading...</span>
+                    <span class="meta-pill" id="metaBranch">Branch: Loading...</span>
+                    <span class="meta-pill" id="metaSemester">Sem: Loading...</span>
+                    <span class="meta-pill" id="metaSection">Sec: Loading...</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- 4 Quick-Action Student Service Cards -->
+        <section class="services-grid">
+            <!-- 1. Attendance Card -->
+            <div class="service-card" onclick="openModal('attendanceModal')" tabindex="0">
+                <div class="card-icon att-icon">📊</div>
+                <div class="card-info">
+                    <h3>Attendance</h3>
+                    <div class="card-metric" id="cardAttendanceMetric">--%</div>
+                    <div class="card-progress-bar">
+                        <div class="card-progress-fill" id="cardAttendanceFill" style="width: 0%;"></div>
+                    </div>
+                    <p class="card-status" id="cardAttendanceStatus">Calculating attendance...</p>
+                </div>
+                <span class="card-arrow">➔</span>
+            </div>
+
+            <!-- 2. Subjects Card -->
+            <div class="service-card" onclick="openModal('subjectsModal')" tabindex="0">
+                <div class="card-icon sub-icon">📚</div>
+                <div class="card-info">
+                    <h3>Subjects</h3>
+                    <div class="card-metric" id="cardSubjectsMetric">--</div>
+                    <p class="card-status" id="cardSubjectsStatus">Registered Coursework</p>
+                </div>
+                <span class="card-arrow">➔</span>
+            </div>
+
+            <!-- 3. Exams Card -->
+            <div class="service-card" onclick="openModal('examsModal')" tabindex="0">
+                <div class="card-icon exam-icon">📝</div>
+                <div class="card-info">
+                    <h3>Exams</h3>
+                    <div class="card-metric" id="cardExamsMetric">Upcoming</div>
+                    <p class="card-status" id="cardExamsStatus">Check exam timetable</p>
+                </div>
+                <span class="card-arrow">➔</span>
+            </div>
+
+            <!-- 4. Notices Card -->
+            <div class="service-card" onclick="openModal('noticesModal')" tabindex="0">
+                <div class="card-icon notice-icon">📢</div>
+                <div class="card-info">
+                    <h3>Notices</h3>
+                    <div class="card-metric" id="cardNoticesMetric">Circulars</div>
+                    <p class="card-status" id="cardNoticesStatus">Official ABES updates</p>
+                </div>
+                <span class="card-arrow">➔</span>
+            </div>
+        </section>
+
+        <!-- AI Student Assistant Section -->
+        <section class="assistant-section">
+            <div class="assistant-header">
+                <div class="assistant-title">
+                    <span class="assistant-icon">🤖</span>
+                    <div>
+                        <h2>AI Student Assistant</h2>
+                        <span class="online-indicator">🟢 Online • ABES Knowledge & Gemini AI</span>
+                    </div>
+                </div>
+                <div class="assistant-actions">
+                    <button class="clear-chat-btn" id="clearChatBtn" onclick="clearConversation()" title="Clear Chat History">
+                        🗑️ Clear Chat
+                    </button>
+                </div>
+            </div>
+
+            <!-- Chat Messages Box -->
+            <div class="chat-container-box" id="chatBox">
+                <div class="message bot-message">
+                    <div class="message-bubble">
+                        <div class="message-header">🤖 ABES Support Assistant</div>
+                        <div class="message-text">
+                            Hello! 👋 How can I help you today?<br><br>
+                            You can ask me anything about ABES Engineering College (courses, scholarships, hostel, library) or your personalized academic records (attendance, upcoming exams, registered subjects).
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Questions Chips -->
+            <div class="quick-questions-wrapper">
+                <span class="quick-label">⚡ Quick Questions:</span>
+                <div class="quick-chips">
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What is my attendance?')">
+                        📊 My Attendance
+                    </button>
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('When is my next exam?')">
+                        📅 My Exams
+                    </button>
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What B.Tech courses are offered at ABES?')">
+                        🏛️ ABES Courses
+                    </button>
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('Where can I find scholarship notifications?')">
+                        💰 Scholarships
+                    </button>
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What subjects do I have?')">
+                        📚 My Subjects
+                    </button>
+                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('Show my profile.')">
+                        👤 My Profile
+                    </button>
+                </div>
+            </div>
+
+            <!-- Input Bar -->
+            <div class="chat-input-bar">
+                <input
+                    type="text"
+                    id="userInput"
+                    placeholder="Ask anything about ABES or your student records..."
+                    autocomplete="off"
+                >
+                <button id="sendBtn" onclick="handleSendClick()">
+                    <span>Send ➤</span>
+                </button>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="dashboard-footer">
+        <div class="footer-badges">
+            <span class="f-badge">📚 ABES Knowledge Base</span>
+            <span class="f-badge">🧠 Gemini & MiniLM AI</span>
+            <span class="f-badge">🔐 Secure Student MySQL</span>
+        </div>
+        <p class="copyright">ABES Engineering College • 19th KM Stone, NH-09, Ghaziabad, UP (201009) • info@abes.ac.in</p>
+    </footer>
+
+    <!-- ========================================================= -->
+    <!-- MODALS FOR DETAILED VIEWS (ATTENDANCE, EXAMS, SUBJECTS, NOTICES, PROFILE) -->
+    <!-- ========================================================= -->
+
+    <!-- 1. Attendance Modal -->
+    <div class="modal-overlay" id="attendanceModal" onclick="closeOnBackdrop(event, 'attendanceModal')">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>📊 Academic Attendance Record</h3>
+                <button class="modal-close" onclick="closeModal('attendanceModal')">×</button>
+            </div>
+            <div class="modal-body" id="attendanceModalBody">
+                <div class="modal-spinner">Loading attendance records from MySQL...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 2. Subjects Modal -->
+    <div class="modal-overlay" id="subjectsModal" onclick="closeOnBackdrop(event, 'subjectsModal')">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>📚 Registered Subjects</h3>
+                <button class="modal-close" onclick="closeModal('subjectsModal')">×</button>
+            </div>
+            <div class="modal-body" id="subjectsModalBody">
+                <div class="modal-spinner">Loading enrolled subjects...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3. Exams Modal -->
+    <div class="modal-overlay" id="examsModal" onclick="closeOnBackdrop(event, 'examsModal')">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>📝 Upcoming Examination Timetable</h3>
+                <button class="modal-close" onclick="closeModal('examsModal')">×</button>
+            </div>
+            <div class="modal-body" id="examsModalBody">
+                <div class="modal-spinner">Loading examination schedule...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 4. Notices Modal -->
+    <div class="modal-overlay" id="noticesModal" onclick="closeOnBackdrop(event, 'noticesModal')">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>📢 Official Circulars & Notices</h3>
+                <button class="modal-close" onclick="closeModal('noticesModal')">×</button>
+            </div>
+            <div class="modal-body" id="noticesModalBody">
+                <div class="modal-spinner">Loading notices...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 5. Profile Modal -->
+    <div class="modal-overlay" id="profileModal" onclick="closeOnBackdrop(event, 'profileModal')">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3>👤 Student Academic Profile</h3>
+                <button class="modal-close" onclick="closeModal('profileModal')">×</button>
+            </div>
+            <div class="modal-body" id="profileModalBody">
+                <div class="modal-spinner">Loading student profile...</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Inline Fail-Safe Handlers (Bypasses Browser Caching of external files) -->
+    <script>
+        function handleLogout() {
+            const btn = document.getElementById("logoutBtn");
+            if (btn) btn.innerHTML = "<span>⏳ Logging out...</span>";
+            try {
+                localStorage.removeItem("abes_token");
+                localStorage.removeItem("abes_role");
+                localStorage.removeItem("abes_user");
+                sessionStorage.clear();
+                fetch("http://127.0.0.1:8000/logout", { method: "POST" }).catch(function(){});
+            } catch (e) {
+                console.warn(e);
+            }
+            setTimeout(function() {
+                window.location.replace("login.html");
+            }, 150);
+        }
+
+        function clearConversation() {
+            const btn = document.getElementById("clearChatBtn");
+            if (btn) {
+                const orig = btn.innerHTML;
+                btn.innerHTML = "<span>✓ Cleared</span>";
+                setTimeout(function() { btn.innerHTML = orig; }, 1500);
+            }
+            const chatBox = document.getElementById("chatBox");
+            if (chatBox) {
+                chatBox.innerHTML = `
+                    <div class="message bot-message">
+                        <div class="message-bubble">
+                            <div class="message-header">🤖 ABES Support Assistant</div>
+                            <div class="message-text">
+                                Chat history cleared! 👋<br><br>
+                                How can I help you? You can ask about ABES or your attendance, subjects, and exams.
+                            </div>
+                        </div>
+                    </div>
+                `;
+            }
+            const token = localStorage.getItem("abes_token");
+            if (token) {
+                fetch("http://127.0.0.1:8000/chat/history", {
+                    method: "DELETE",
+                    headers: { "Authorization": "Bearer " + token }
+                }).catch(function(err) { console.warn(err); });
+            }
+        }
+    </script>
+
+    <script src="dashboard.js?v=2.5"></script>
+
+</body>
+</html>
