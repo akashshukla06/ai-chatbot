@@ -665,6 +665,13 @@ function scrollToTop() {
     window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+function toggleMobileNav() {
+    const nav = document.getElementById("navMenu");
+    if (nav) {
+        nav.classList.toggle("open");
+    }
+}
+
 // =========================================================
 // 9. EXPLICIT GLOBAL WINDOW BINDINGS
 // =========================================================
@@ -672,6 +679,7 @@ function scrollToTop() {
 window.handleLogout = handleLogout;
 window.clearConversation = clearConversation;
 window.toggleTheme = toggleTheme;
+window.toggleMobileNav = toggleMobileNav;
 window.openModal = openModal;
 window.closeModal = closeModal;
 window.closeOnBackdrop = closeOnBackdrop;

@@ -3,189 +3,308 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABES Student Support AI Portal | Dashboard</title>
+    <title>Student Dashboard | ABES Engineering College</title>
     <link rel="stylesheet" href="dashboard.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body class="theme-light">
 
-    <!-- Top Navigation Bar -->
-    <header class="navbar">
-        <div class="nav-brand">
-            <div class="brand-logo">🎓</div>
-            <div class="brand-text">
-                <span class="brand-title">ABES Student Support AI</span>
-                <span class="brand-sub">ABES Engineering College, Ghaziabad</span>
-            </div>
-        </div>
+    <!-- Top Black College Header (ABES Style) -->
+    <header class="top-nav-bar" id="mainHeader">
+        <div class="nav-container">
+            
+            <!-- Branding -->
+            <a href="dashboard.html" class="nav-brand">
+                <img src="assets/ak-logo.png" alt="AK Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="brand-logo-fallback" style="display:none;">🎓</span>
+                <div class="brand-headings">
+                    <span class="brand-title">ABES STUDENT SUPPORT AI</span>
+                    <span class="brand-subtitle">Academic & Student Services Portal • Autonomous</span>
+                </div>
+            </a>
 
-        <nav class="nav-links">
-            <button class="nav-btn active" onclick="scrollToTop()">
-                <span>🏠 Home</span>
+            <!-- Mobile Hamburger Toggle -->
+            <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
             </button>
-            <button class="nav-btn" onclick="openModal('profileModal')">
-                <span>👤 Profile</span>
-            </button>
-            <button class="theme-toggle-btn" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
-                <span id="themeIcon">🌙</span>
-            </button>
-            <button class="nav-btn logout-btn" id="logoutBtn" onclick="handleLogout()" title="Sign out of portal">
-                <span>🚪 Logout</span>
-            </button>
-        </nav>
+
+            <!-- Main Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-item active">Home</a></li>
+                    <li><a href="#academics" class="nav-item">Academics</a></li>
+                    <li><a href="#services" class="nav-item">Student Services</a></li>
+                    <li><a href="ai-support.html" class="nav-item nav-highlight">AI Support</a></li>
+                    <li><a href="#resources" class="nav-item">Resources</a></li>
+                </ul>
+
+                <div class="nav-user-actions">
+                    <a href="profile.html" class="action-btn" title="View Profile">
+                        <span>👤 Profile</span>
+                    </a>
+                    <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <button class="action-btn btn-logout" id="logoutBtn" onclick="handleLogout()" title="Sign out">
+                        <span>🚪 Logout</span>
+                    </button>
+                </div>
+            </nav>
+
+        </div>
     </header>
 
-    <!-- Main Container -->
-    <main class="dashboard-container">
+    <!-- Institutional Marquee Ticker (Like Official ABES Website) -->
+    <div class="institutional-ticker">
+        <div class="ticker-content">
+            <span class="ticker-badge">ACADEMIC NOTICE:</span>
+            <span class="ticker-text">Welcome to ABES Student Support Portal • Odd Semester Academic Sessions in Progress • For Academic Inquiries & Student Services, consult the AI Support Desk • Autonomous Institution Affiliated to AKTU, Lucknow (College Code 032)</span>
+        </div>
+    </div>
 
-        <!-- Welcome Banner -->
-        <section class="welcome-card">
-            <div class="welcome-content">
-                <div class="welcome-badge">ABESEC Student Portal • AKTU Affiliated</div>
-                <h1 id="welcomeHeading">👋 Welcome back, Student!</h1>
-                <p class="welcome-sub">How can I help you today?</p>
-                <div class="student-meta-bar" id="studentMetaBar">
-                    <span class="meta-pill" id="metaStudentId">ID: Loading...</span>
-                    <span class="meta-pill" id="metaCourse">Course: Loading...</span>
-                    <span class="meta-pill" id="metaBranch">Branch: Loading...</span>
-                    <span class="meta-pill" id="metaSemester">Sem: Loading...</span>
-                    <span class="meta-pill" id="metaSection">Sec: Loading...</span>
+    <!-- Large Campus Hero Section (Official ABES Style) -->
+    <section class="campus-hero-section">
+        <div class="campus-hero-overlay"></div>
+        <div class="campus-hero-content">
+            <div class="hero-badge">Autonomous Institution • AKTU Code 032 • NAAC 'A' Grade</div>
+            <h1 class="hero-college-name">ABES Engineering College</h1>
+            <p class="hero-location">19th KM Stone, NH-09, Ghaziabad, Uttar Pradesh (201009)</p>
+            <div class="hero-divider"></div>
+            <h2 id="welcomeHeading" class="hero-welcome">Welcome to ABES Student Support Portal</h2>
+            <p class="hero-description">
+                Access your personalized academic records, semester attendance, enrolled coursework, upcoming examination timetables, and AI-powered student assistance.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Dashboard Container -->
+    <main class="dashboard-main-container">
+
+        <!-- 1. Student Identity Dossier Panel -->
+        <section class="student-identity-panel">
+            <div class="panel-ribbon">
+                <span class="ribbon-title">OFFICIAL STUDENT RECORD</span>
+                <span class="ribbon-status">Status: <strong>Active Enrolled</strong></span>
+            </div>
+            
+            <div class="identity-grid" id="studentMetaBar">
+                <div class="identity-item">
+                    <span class="item-label">Student ID / Roll No</span>
+                    <strong class="item-value" id="metaStudentId">Loading ID...</strong>
+                </div>
+                <div class="identity-item">
+                    <span class="item-label">Academic Programme</span>
+                    <strong class="item-value" id="metaCourse">Loading Course...</strong>
+                </div>
+                <div class="identity-item">
+                    <span class="item-label">Department / Branch</span>
+                    <strong class="item-value" id="metaBranch">Loading Branch...</strong>
+                </div>
+                <div class="identity-item">
+                    <span class="item-label">Current Semester</span>
+                    <strong class="item-value" id="metaSemester">Sem --</strong>
+                </div>
+                <div class="identity-item">
+                    <span class="item-label">Academic Section</span>
+                    <strong class="item-value" id="metaSection">Sec --</strong>
+                </div>
+                <div class="identity-item">
+                    <span class="item-label">Affiliated University</span>
+                    <strong class="item-value">AKTU, Lucknow</strong>
                 </div>
             </div>
         </section>
 
-        <!-- 4 Quick-Action Student Service Cards -->
-        <section class="services-grid">
-            <!-- 1. Attendance Card -->
-            <div class="service-card" onclick="openModal('attendanceModal')" tabindex="0">
-                <div class="card-icon att-icon">📊</div>
-                <div class="card-info">
-                    <h3>Attendance</h3>
-                    <div class="card-metric" id="cardAttendanceMetric">--%</div>
-                    <div class="card-progress-bar">
-                        <div class="card-progress-fill" id="cardAttendanceFill" style="width: 0%;"></div>
-                    </div>
-                    <p class="card-status" id="cardAttendanceStatus">Calculating attendance...</p>
-                </div>
-                <span class="card-arrow">➔</span>
+        <!-- 2. Academic Overview Grid (4 Academic Panels) -->
+        <section class="academic-section" id="academics">
+            <div class="section-title-bar">
+                <h3>Academic Overview & Coursework</h3>
+                <span class="section-note">Click any panel for detailed breakdowns</span>
             </div>
 
-            <!-- 2. Subjects Card -->
-            <div class="service-card" onclick="openModal('subjectsModal')" tabindex="0">
-                <div class="card-icon sub-icon">📚</div>
-                <div class="card-info">
-                    <h3>Subjects</h3>
-                    <div class="card-metric" id="cardSubjectsMetric">--</div>
-                    <p class="card-status" id="cardSubjectsStatus">Registered Coursework</p>
-                </div>
-                <span class="card-arrow">➔</span>
-            </div>
-
-            <!-- 3. Exams Card -->
-            <div class="service-card" onclick="openModal('examsModal')" tabindex="0">
-                <div class="card-icon exam-icon">📝</div>
-                <div class="card-info">
-                    <h3>Exams</h3>
-                    <div class="card-metric" id="cardExamsMetric">Upcoming</div>
-                    <p class="card-status" id="cardExamsStatus">Check exam timetable</p>
-                </div>
-                <span class="card-arrow">➔</span>
-            </div>
-
-            <!-- 4. Notices Card -->
-            <div class="service-card" onclick="openModal('noticesModal')" tabindex="0">
-                <div class="card-icon notice-icon">📢</div>
-                <div class="card-info">
-                    <h3>Notices</h3>
-                    <div class="card-metric" id="cardNoticesMetric">Circulars</div>
-                    <p class="card-status" id="cardNoticesStatus">Official ABES updates</p>
-                </div>
-                <span class="card-arrow">➔</span>
-            </div>
-        </section>
-
-        <!-- AI Student Assistant Section -->
-        <section class="assistant-section">
-            <div class="assistant-header">
-                <div class="assistant-title">
-                    <span class="assistant-icon">🤖</span>
-                    <div>
-                        <h2>AI Student Assistant</h2>
-                        <span class="online-indicator">🟢 Online • ABES Knowledge & Gemini AI</span>
-                    </div>
-                </div>
-                <div class="assistant-actions">
-                    <button class="clear-chat-btn" id="clearChatBtn" onclick="clearConversation()" title="Clear Chat History">
-                        🗑️ Clear Chat
-                    </button>
-                </div>
-            </div>
-
-            <!-- Chat Messages Box -->
-            <div class="chat-container-box" id="chatBox">
-                <div class="message bot-message">
-                    <div class="message-bubble">
-                        <div class="message-header">🤖 ABES Support Assistant</div>
-                        <div class="message-text">
-                            Hello! 👋 How can I help you today?<br><br>
-                            You can ask me anything about ABES Engineering College (courses, scholarships, hostel, library) or your personalized academic records (attendance, upcoming exams, registered subjects).
+            <div class="academic-grid">
+                <!-- Panel 1: Attendance -->
+                <div class="academic-card" onclick="openModal('attendanceModal')" tabindex="0" role="button" aria-label="View Attendance">
+                    <div class="card-top">
+                        <div class="card-icon-box icon-att">
+                            <img src="assets/icons/attendance.svg" alt="" class="card-svg" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="icon-fallback" style="display:none;">📊</span>
                         </div>
+                        <span class="card-type">ERP Record</span>
+                    </div>
+                    <h4 class="card-title">Attendance</h4>
+                    <div class="card-metric-val" id="cardAttendanceMetric">--%</div>
+                    <div class="card-progress">
+                        <div class="card-progress-bar" id="cardAttendanceFill" style="width: 0%;"></div>
+                    </div>
+                    <p class="card-detail-text" id="cardAttendanceStatus">Calculating attendance...</p>
+                    <div class="card-action-link">View Attendance Log ➔</div>
+                </div>
+
+                <!-- Panel 2: Subjects -->
+                <div class="academic-card" onclick="openModal('subjectsModal')" tabindex="0" role="button" aria-label="View Subjects">
+                    <div class="card-top">
+                        <div class="card-icon-box icon-sub">
+                            <img src="assets/icons/subjects.svg" alt="" class="card-svg" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="icon-fallback" style="display:none;">📚</span>
+                        </div>
+                        <span class="card-type">Curriculum</span>
+                    </div>
+                    <h4 class="card-title">Subjects</h4>
+                    <div class="card-metric-val" id="cardSubjectsMetric">--</div>
+                    <p class="card-detail-text" id="cardSubjectsStatus">Registered Coursework</p>
+                    <div class="card-action-link">View Enrolled Subjects ➔</div>
+                </div>
+
+                <!-- Panel 3: Examinations -->
+                <div class="academic-card" onclick="openModal('examsModal')" tabindex="0" role="button" aria-label="View Examinations">
+                    <div class="card-top">
+                        <div class="card-icon-box icon-exam">
+                            <img src="assets/icons/exams.svg" alt="" class="card-svg" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="icon-fallback" style="display:none;">📝</span>
+                        </div>
+                        <span class="card-type">Timetable</span>
+                    </div>
+                    <h4 class="card-title">Examinations</h4>
+                    <div class="card-metric-val" id="cardExamsMetric">Upcoming</div>
+                    <p class="card-detail-text" id="cardExamsStatus">Check exam timetable</p>
+                    <div class="card-action-link">View Exam Schedule ➔</div>
+                </div>
+
+                <!-- Panel 4: Notices & Circulars -->
+                <div class="academic-card" onclick="openModal('noticesModal')" tabindex="0" role="button" aria-label="View Notices">
+                    <div class="card-top">
+                        <div class="card-icon-box icon-notices">
+                            <img src="assets/icons/notices.svg" alt="" class="card-svg" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                            <span class="icon-fallback" style="display:none;">📢</span>
+                        </div>
+                        <span class="card-type">Official</span>
+                    </div>
+                    <h4 class="card-title">Notices</h4>
+                    <div class="card-metric-val" id="cardNoticesMetric">Circulars</div>
+                    <p class="card-detail-text" id="cardNoticesStatus">Official ABES updates</p>
+                    <div class="card-action-link">View College Circulars ➔</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. AI Student Support Callout Banner (Dedicated Support Desk) -->
+        <section class="ai-support-callout-panel" id="services">
+            <div class="callout-inner">
+                <div class="callout-text">
+                    <span class="callout-tag">ACADEMIC & ADMISSIONS ASSISTANCE</span>
+                    <h3>ABES AI Student Support Desk</h3>
+                    <p>Have inquiries regarding college courses, fee structures, scholarship procedures, hostel accommodation, or academic criteria? The intelligent student support assistant provides verified institutional guidance.</p>
+                    <div class="callout-features">
+                        <span class="feature-item">✓ Instant ABES Knowledge Base Search</span>
+                        <span class="feature-item">✓ Personalized Attendance & Exam Inquiries</span>
+                        <span class="feature-item">✓ Official AKTU & AICTE Curriculum Guidelines</span>
                     </div>
                 </div>
-            </div>
-
-            <!-- Quick Questions Chips -->
-            <div class="quick-questions-wrapper">
-                <span class="quick-label">⚡ Quick Questions:</span>
-                <div class="quick-chips">
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What is my attendance?')">
-                        📊 My Attendance
-                    </button>
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('When is my next exam?')">
-                        📅 My Exams
-                    </button>
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What B.Tech courses are offered at ABES?')">
-                        🏛️ ABES Courses
-                    </button>
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('Where can I find scholarship notifications?')">
-                        💰 Scholarships
-                    </button>
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('What subjects do I have?')">
-                        📚 My Subjects
-                    </button>
-                    <button type="button" class="chip-btn" onclick="sendQuickQuestion('Show my profile.')">
-                        👤 My Profile
-                    </button>
+                <div class="callout-action">
+                    <a href="ai-support.html" class="btn-launch-ai">
+                        <span>Consult AI Student Support ➔</span>
+                    </a>
                 </div>
             </div>
+        </section>
 
-            <!-- Input Bar -->
-            <div class="chat-input-bar">
-                <input
-                    type="text"
-                    id="userInput"
-                    placeholder="Ask anything about ABES or your student records..."
-                    autocomplete="off"
-                >
-                <button id="sendBtn" onclick="handleSendClick()">
-                    <span>Send ➤</span>
-                </button>
+        <!-- 4. Institutional Resources Section -->
+        <section class="resources-section" id="resources">
+            <div class="section-title-bar">
+                <h3>Official College Links & Portals</h3>
+                <span class="section-note">Verified resources for students & faculty</span>
+            </div>
+
+            <div class="resources-grid">
+                <a href="https://www.abes.ac.in/" target="_blank" rel="noopener noreferrer" class="resource-panel">
+                    <div class="res-icon">
+                        <img src="assets/icons/website.svg" alt="" class="card-svg">
+                    </div>
+                    <div class="res-info">
+                        <h5>Official ABES Website</h5>
+                        <p>Explore college announcements, campus facilities, and directorate updates.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.abes.ac.in/courses-offered.html" target="_blank" rel="noopener noreferrer" class="resource-panel">
+                    <div class="res-icon">
+                        <img src="assets/icons/courses.svg" alt="" class="card-svg">
+                    </div>
+                    <div class="res-info">
+                        <h5>Courses & Curriculum</h5>
+                        <p>Approved B.Tech, M.Tech, and MCA academic syllabi.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.abes.ac.in/academic-calendar.html" target="_blank" rel="noopener noreferrer" class="resource-panel">
+                    <div class="res-icon">
+                        <img src="assets/icons/calendar.svg" alt="" class="card-svg">
+                    </div>
+                    <div class="res-info">
+                        <h5>Academic Calendar</h5>
+                        <p>Semester schedules, examination windows, and institutional holidays.</p>
+                    </div>
+                </a>
+
+                <a href="https://www.abes.ac.in/circulars.html" target="_blank" rel="noopener noreferrer" class="resource-panel">
+                    <div class="res-icon">
+                        <img src="assets/icons/circulars.svg" alt="" class="card-svg">
+                    </div>
+                    <div class="res-info">
+                        <h5>Notices & Circulars</h5>
+                        <p>Official notifications, scholarship updates, and administrative orders.</p>
+                    </div>
+                </a>
             </div>
         </section>
 
     </main>
 
-    <!-- Footer -->
-    <footer class="dashboard-footer">
-        <div class="footer-badges">
-            <span class="f-badge">📚 ABES Knowledge Base</span>
-            <span class="f-badge">🧠 Gemini & MiniLM AI</span>
-            <span class="f-badge">🔐 Secure Student MySQL</span>
+    <!-- Institutional Footer (ABES Official Style) -->
+    <footer class="institutional-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="assets/ak-logo.png" alt="AK Crest" class="footer-logo" onerror="this.style.display='none'">
+                        <h4>ABES Engineering College</h4>
+                    </div>
+                    <p class="footer-address">
+                        19th KM Stone, NH-09, Ghaziabad, Uttar Pradesh (201009)<br>
+                        Phone: 0120-7135112 • Email: <a href="mailto:info@abes.ac.in">info@abes.ac.in</a>
+                    </p>
+                    <div class="footer-accreditations">
+                        <span>Autonomous</span> • <span>AICTE Approved</span> • <span>AKTU Affiliated (Code 032)</span>
+                    </div>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Quick Navigation</h5>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+                        <li><a href="ai-support.html">AI Student Support Desk</a></li>
+                        <li><a href="profile.html">Student Profile</a></li>
+                        <li><a href="https://www.abes.ac.in" target="_blank" rel="noopener noreferrer">Official College Website</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Student Portal Security</h5>
+                    <p class="footer-security-text">
+                        Protected by institutional token authentication. Student attendance, exam timetables, and academic records are securely synchronized with institutional MySQL databases.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ABES Engineering College. All Rights Reserved. Student Support & Academic Portal.</p>
+            </div>
         </div>
-        <p class="copyright">ABES Engineering College • 19th KM Stone, NH-09, Ghaziabad, UP (201009) • info@abes.ac.in</p>
     </footer>
 
     <!-- ========================================================= -->
@@ -222,7 +341,7 @@
     <div class="modal-overlay" id="examsModal" onclick="closeOnBackdrop(event, 'examsModal')">
         <div class="modal-card">
             <div class="modal-header">
-                <h3>📝 Upcoming Examination Timetable</h3>
+                <h3>📝 Examination Timetable</h3>
                 <button class="modal-close" onclick="closeModal('examsModal')">×</button>
             </div>
             <div class="modal-body" id="examsModalBody">
@@ -239,12 +358,12 @@
                 <button class="modal-close" onclick="closeModal('noticesModal')">×</button>
             </div>
             <div class="modal-body" id="noticesModalBody">
-                <div class="modal-spinner">Loading notices...</div>
+                <div class="modal-spinner">Loading official notices...</div>
             </div>
         </div>
     </div>
 
-    <!-- 5. Profile Modal -->
+    <!-- 5. Profile Modal (Backwards compatibility) -->
     <div class="modal-overlay" id="profileModal" onclick="closeOnBackdrop(event, 'profileModal')">
         <div class="modal-card">
             <div class="modal-header">
@@ -252,62 +371,11 @@
                 <button class="modal-close" onclick="closeModal('profileModal')">×</button>
             </div>
             <div class="modal-body" id="profileModalBody">
-                <div class="modal-spinner">Loading student profile...</div>
+                <div class="modal-spinner">Loading profile...</div>
             </div>
         </div>
     </div>
 
-    <!-- Inline Fail-Safe Handlers (Bypasses Browser Caching of external files) -->
-    <script>
-        function handleLogout() {
-            const btn = document.getElementById("logoutBtn");
-            if (btn) btn.innerHTML = "<span>⏳ Logging out...</span>";
-            try {
-                localStorage.removeItem("abes_token");
-                localStorage.removeItem("abes_role");
-                localStorage.removeItem("abes_user");
-                sessionStorage.clear();
-                fetch("http://127.0.0.1:8000/logout", { method: "POST" }).catch(function(){});
-            } catch (e) {
-                console.warn(e);
-            }
-            setTimeout(function() {
-                window.location.replace("login.html");
-            }, 150);
-        }
-
-        function clearConversation() {
-            const btn = document.getElementById("clearChatBtn");
-            if (btn) {
-                const orig = btn.innerHTML;
-                btn.innerHTML = "<span>✓ Cleared</span>";
-                setTimeout(function() { btn.innerHTML = orig; }, 1500);
-            }
-            const chatBox = document.getElementById("chatBox");
-            if (chatBox) {
-                chatBox.innerHTML = `
-                    <div class="message bot-message">
-                        <div class="message-bubble">
-                            <div class="message-header">🤖 ABES Support Assistant</div>
-                            <div class="message-text">
-                                Chat history cleared! 👋<br><br>
-                                How can I help you? You can ask about ABES or your attendance, subjects, and exams.
-                            </div>
-                        </div>
-                    </div>
-                `;
-            }
-            const token = localStorage.getItem("abes_token");
-            if (token) {
-                fetch("http://127.0.0.1:8000/chat/history", {
-                    method: "DELETE",
-                    headers: { "Authorization": "Bearer " + token }
-                }).catch(function(err) { console.warn(err); });
-            }
-        }
-    </script>
-
-    <script src="dashboard.js?v=2.5"></script>
-
+    <script src="dashboard.js"></script>
 </body>
 </html>

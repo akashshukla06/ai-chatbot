@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile | ABES Engineering College</title>
+    <link rel="stylesheet" href="profile.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light">
+
+    <!-- Top Black College Header (ABES Style) -->
+    <header class="top-nav-bar" id="mainHeader">
+        <div class="nav-container">
+            
+            <!-- Branding -->
+            <a href="dashboard.html" class="nav-brand">
+                <img src="assets/ak-logo.png" alt="AK Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="brand-logo-fallback" style="display:none;">🎓</span>
+                <div class="brand-headings">
+                    <span class="brand-title">ABES STUDENT SUPPORT AI</span>
+                    <span class="brand-subtitle">Academic & Student Services Portal • Autonomous</span>
+                </div>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Main Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-item">Home</a></li>
+                    <li><a href="dashboard.html#academics" class="nav-item">Academics</a></li>
+                    <li><a href="dashboard.html#services" class="nav-item">Student Services</a></li>
+                    <li><a href="ai-support.html" class="nav-item nav-highlight">AI Support</a></li>
+                    <li><a href="dashboard.html#resources" class="nav-item">Resources</a></li>
+                </ul>
+
+                <div class="nav-user-actions">
+                    <a href="profile.html" class="action-btn active" title="View Profile">
+                        <span>👤 Profile</span>
+                    </a>
+                    <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <button class="action-btn btn-logout" id="logoutBtn" onclick="handleLogout()" title="Sign out">
+                        <span>🚪 Logout</span>
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Page Title Breadcrumb Banner -->
+    <section class="profile-header-banner">
+        <div class="banner-inner">
+            <div class="breadcrumb">
+                <a href="dashboard.html">Home</a> <span>/</span> <span>Student Profile Dossier</span>
+            </div>
+            <h1>Institutional Student Profile</h1>
+            <p>Verified academic identity, enrolment particulars, and departmental standing registered with ABES Engineering College.</p>
+        </div>
+    </section>
+
+    <!-- Main Profile Container -->
+    <main class="profile-main-container">
+
+        <!-- Identity Dossier Card -->
+        <div class="profile-dossier-card">
+            
+            <div class="dossier-header-ribbon">
+                <div class="ribbon-left">
+                    <span class="dossier-tag">STUDENT ENROLMENT DOSSIER</span>
+                    <h2 id="profStudentName">Loading Student Record...</h2>
+                </div>
+                <div class="ribbon-right">
+                    <span class="academic-badge active">Status: Regular Enrolled</span>
+                </div>
+            </div>
+
+            <div class="dossier-body">
+                
+                <!-- Left: Student Avatar & Credentials -->
+                <div class="avatar-sidebar">
+                    <div class="avatar-frame">
+                        <img src="assets/student-avatar.png" alt="Student Profile Avatar" class="student-avatar-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                        <span class="avatar-fallback" style="display:none;">👨‍🎓</span>
+                    </div>
+                    <div class="student-id-badge" id="profRollBadge">ID: --</div>
+                    <p class="college-code-text">Autonomous Institution • AKTU Code 032</p>
+                </div>
+
+                <!-- Right: Official Academic Fields -->
+                <div class="dossier-fields-grid">
+                    
+                    <div class="dossier-field">
+                        <span class="field-label">Full Name</span>
+                        <strong class="field-value" id="fieldFullName">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Student ID / University Roll No</span>
+                        <strong class="field-value" id="fieldStudentId">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Institutional Email</span>
+                        <strong class="field-value" id="fieldEmail">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Academic Programme</span>
+                        <strong class="field-value" id="fieldCourse">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field full-width">
+                        <span class="field-label">Department / Branch</span>
+                        <strong class="field-value" id="fieldBranch">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Academic Semester</span>
+                        <strong class="field-value" id="fieldSemester">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Class Section</span>
+                        <strong class="field-value" id="fieldSection">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Enrolment Year</span>
+                        <strong class="field-value" id="fieldYear">Loading...</strong>
+                    </div>
+
+                    <div class="dossier-field">
+                        <span class="field-label">Academic Affiliation</span>
+                        <strong class="field-value">Dr. A.P.J. Abdul Kalam Technical University (AKTU)</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- Profile Summary & Action Footer -->
+            <div class="dossier-footer">
+                <div class="dossier-actions">
+                    <a href="dashboard.html" class="btn-profile-action btn-outline">
+                        <span>➔ Back to Dashboard</span>
+                    </a>
+                    <a href="ai-support.html" class="btn-profile-action btn-primary">
+                        <span>💬 Consult AI Support</span>
+                    </a>
+                </div>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Institutional Footer -->
+    <footer class="institutional-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="assets/ak-logo.png" alt="AK Crest" class="footer-logo" onerror="this.style.display='none'">
+                        <h4>ABES Engineering College</h4>
+                    </div>
+                    <p class="footer-address">
+                        19th KM Stone, NH-09, Ghaziabad, Uttar Pradesh (201009)<br>
+                        Phone: 0120-7135112 • Email: <a href="mailto:info@abes.ac.in">info@abes.ac.in</a>
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Student Portal</h5>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Home Dashboard</a></li>
+                        <li><a href="ai-support.html">AI Student Support Desk</a></li>
+                        <li><a href="https://www.abes.ac.in" target="_blank" rel="noopener noreferrer">Official College Website ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Official Certification</h5>
+                    <p class="footer-security-text">
+                        Student enrolment profiles are validated against official institutional MySQL records. For discrepancy corrections, submit a formal request to the Office of the Registrar.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ABES Engineering College. All Rights Reserved. Student Support & Academic Portal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="profile.js"></script>
+</body>
+</html>

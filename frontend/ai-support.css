@@ -1,0 +1,787 @@
+/* =========================================================
+   ABES ENGINEERING COLLEGE - AI STUDENT SUPPORT DESK STYLES
+   Official Institutional Aesthetic: History Above, Input At Bottom
+   ========================================================= */
+
+:root {
+    --header-bg: #111111;
+    --college-navy: #0d233a;
+    --college-navy-dark: #071524;
+    --college-blue: #1e3a8a;
+    --college-red: #a51c30;
+    --college-red-hover: #861424;
+    --college-gold: #c59b27;
+    
+    --bg-page: #f4f6f9;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #f8fafc;
+    
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    
+    --border-color: #e2e8f0;
+    --border-dark: #cbd5e1;
+    
+    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --hover-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+body.theme-dark {
+    --bg-page: #0b0f19;
+    --bg-surface: #111827;
+    --bg-surface-alt: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #cbd5e1;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+    --border-dark: #4b5563;
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    --hover-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   1. TOP BLACK COLLEGE HEADER (ABES Style)
+   ========================================================= */
+
+.top-nav-bar {
+    background-color: var(--header-bg);
+    color: #ffffff;
+    border-bottom: 3px solid var(--college-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 68px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #181c24;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.brand-headings {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: #cbd5e1;
+    letter-spacing: 0.3px;
+}
+
+/* Nav Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-item {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active {
+    color: #ffffff;
+    background: var(--college-navy);
+    font-weight: 600;
+    border-bottom: 2px solid var(--college-gold);
+}
+
+.nav-item.nav-highlight {
+    background: var(--college-red);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav-item.nav-highlight:hover {
+    background: var(--college-red-hover);
+}
+
+.nav-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    padding-left: 12px;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 6px 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.15s;
+}
+
+.action-btn:hover {
+    background: rgba(255, 255, 255, 0.16);
+    color: #ffffff;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f3f4f6;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.btn-logout {
+    border-color: #f87171;
+    color: #fca5a5;
+    background: rgba(185, 28, 28, 0.18);
+}
+
+.btn-logout:hover {
+    background: var(--college-red);
+    color: #ffffff;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+}
+
+/* =========================================================
+   2. INSTITUTIONAL HEADER BANNER
+   ========================================================= */
+
+.support-header-banner {
+    background: linear-gradient(135deg, #0d233a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 30px 24px;
+    border-bottom: 2px solid var(--college-gold);
+}
+
+.banner-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.sub-badge {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.22);
+    color: #fef08a;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 10px;
+    border-radius: 3px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.support-header-banner h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 25px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.support-header-banner p {
+    font-size: 13px;
+    color: #cbd5e1;
+    max-width: 780px;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   3. UNIFIED CONSULTATION DESK CARD (HISTORY ABOVE, INPUT AT BOTTOM)
+   ========================================================= */
+
+.support-main-container {
+    max-width: 1200px;
+    width: 100%;
+    margin: 24px auto 45px;
+    padding: 0 24px;
+    flex: 1;
+}
+
+.support-desk-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--college-navy);
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+/* Desk Card Header */
+.desk-card-header {
+    background: var(--bg-surface-alt);
+    border-bottom: 1px solid var(--border-color);
+    padding: 14px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.desk-card-header h3 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--college-navy);
+}
+
+body.theme-dark .desk-card-header h3 {
+    color: #93c5fd;
+}
+
+.status-indicator {
+    font-size: 11px;
+    font-weight: 600;
+    color: #15803d;
+    margin-left: 10px;
+}
+
+.btn-clear-chat {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-secondary);
+    padding: 5px 11px;
+    border-radius: 3px;
+    font-size: 11px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.btn-clear-chat:hover {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #b91c1c;
+}
+
+/* 2. Scrollable Inquiry Stream Box */
+.inquiry-stream-box {
+    padding: 22px;
+    min-height: 380px;
+    max-height: 520px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    scroll-behavior: smooth;
+    background: var(--bg-surface);
+}
+
+/* Question & Answer Record Cards */
+.response-record {
+    border-radius: 4px;
+    padding: 16px 18px;
+    position: relative;
+    line-height: 1.55;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+}
+
+.user-record {
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid var(--college-blue);
+    align-self: flex-end;
+    max-width: 85%;
+    width: 100%;
+}
+
+body.theme-dark .user-record {
+    background: #1e293b;
+    border-color: #374151;
+}
+
+.bot-record {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-left: 4px solid var(--college-navy);
+    align-self: flex-start;
+    max-width: 95%;
+    width: 100%;
+}
+
+.record-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 8px;
+    font-size: 11px;
+}
+
+.user-record .responder-tag {
+    font-weight: 700;
+    color: var(--college-blue);
+    text-transform: uppercase;
+    letter-spacing: 0.4px;
+}
+
+body.theme-dark .user-record .responder-tag {
+    color: #93c5fd;
+}
+
+.bot-record .responder-tag {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
+    color: var(--college-navy);
+    letter-spacing: 0.4px;
+}
+
+body.theme-dark .bot-record .responder-tag {
+    color: #60a5fa;
+}
+
+.response-time {
+    color: var(--text-muted);
+}
+
+.record-body {
+    font-size: 14px;
+    color: var(--text-primary);
+}
+
+.record-body p {
+    margin-bottom: 8px;
+}
+
+.record-body p:last-child {
+    margin-bottom: 0;
+}
+
+.support-bullet-list {
+    margin: 8px 0 10px 20px;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.record-source {
+    margin-top: 10px;
+    padding-top: 8px;
+    border-top: 1px dashed var(--border-color);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.record-source a {
+    color: var(--college-navy);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+body.theme-dark .record-source a {
+    color: #93c5fd;
+}
+
+.record-source a:hover {
+    text-decoration: underline;
+}
+
+/* Typing Indicator */
+.typing-box {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    color: var(--text-muted);
+    font-size: 13px;
+    font-style: italic;
+}
+
+.typing-dot {
+    width: 6px;
+    height: 6px;
+    background: var(--college-navy);
+    border-radius: 50%;
+    animation: typingPulse 1s infinite alternate;
+}
+
+.typing-dot:nth-child(2) { animation-delay: 0.2s; }
+.typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+@keyframes typingPulse {
+    from { opacity: 0.3; transform: scale(0.8); }
+    to { opacity: 1; transform: scale(1.2); }
+}
+
+/* 3. Quick Questions Chips Area */
+.quick-inquiries-area {
+    border-top: 1px solid var(--border-color);
+    padding: 12px 20px;
+    background: var(--bg-surface-alt);
+}
+
+.quick-title {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.quick-chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.chip-button {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
+    padding: 5px 11px;
+    border-radius: 3px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+.chip-button:hover {
+    background: #eff6ff;
+    border-color: #93c5fd;
+    color: var(--college-navy);
+}
+
+/* 4. Inquiry Input Area (At the Bottom) */
+.inquiry-input-area {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 20px 14px;
+    background: var(--bg-surface);
+}
+
+.input-area-title {
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.input-row {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 6px;
+}
+
+.input-row input {
+    flex: 1;
+    padding: 12px 16px;
+    font-size: 14px;
+    font-family: inherit;
+    border: 1.5px solid #cbd5e1;
+    border-radius: 4px;
+    background: var(--bg-surface-alt);
+    color: var(--text-primary);
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-row input:focus {
+    outline: none;
+    border-color: var(--college-navy);
+    background: var(--bg-surface);
+    box-shadow: 0 0 0 3px rgba(13, 35, 58, 0.12);
+}
+
+.input-row button {
+    background: var(--college-navy);
+    color: #ffffff;
+    border: 1px solid var(--college-navy-dark);
+    padding: 0 24px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    white-space: nowrap;
+}
+
+.input-row button:hover {
+    background: var(--college-red);
+}
+
+.input-row button:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+}
+
+.input-hint {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* =========================================================
+   5. INSTITUTIONAL FOOTER
+   ========================================================= */
+
+.institutional-footer {
+    background: var(--header-bg);
+    color: #9ca3af;
+    border-top: 3px solid var(--college-red);
+    padding: 34px 0 18px;
+    margin-top: auto;
+    font-size: 13px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 36px;
+    margin-bottom: 26px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    height: 38px;
+    width: auto;
+    max-width: 54px;
+    object-fit: contain;
+    background: #181c24;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.footer-brand h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footer-address {
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.footer-address a {
+    color: var(--college-gold);
+    text-decoration: none;
+}
+
+.footer-col h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
+    color: var(--college-gold);
+}
+
+.footer-security-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+
+.footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* =========================================================
+   6. RESPONSIVE DESIGN
+   ========================================================= */
+
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #111111;
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        border-top: 1px solid #262626;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-user-actions {
+        width: 100%;
+        justify-content: center;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 14px;
+        margin-left: 0;
+    }
+
+    .desk-card-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .status-indicator {
+        margin-left: 0;
+        display: block;
+    }
+
+    .inquiry-stream-box {
+        min-height: 320px;
+        max-height: 440px;
+        padding: 16px;
+    }
+
+    .input-row {
+        flex-direction: column;
+    }
+
+    .input-row button {
+        padding: 12px;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

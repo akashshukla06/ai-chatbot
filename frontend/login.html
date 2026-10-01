@@ -3,85 +3,103 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ABESEC Portal Login | Student Support AI</title>
+    <title>Student Portal Login | ABES Engineering College</title>
     <link rel="stylesheet" href="login.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
-
 <body>
 
-    <div class="login-container">
+    <!-- Top Institutional Bar -->
+    <header class="top-college-bar">
+        <div class="header-inner">
+            <div class="college-brand">
+                <img src="assets/ak-logo.png" alt="AK Logo" class="college-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="logo-fallback" style="display:none;">🎓</span>
+                <div class="brand-titles">
+                    <span class="college-name">ABES STUDENT SUPPORT AI</span>
+                    <span class="portal-sub">Academic & Student Services Portal • Ghaziabad</span>
+                </div>
+            </div>
+            <div class="header-accreditation">
+                <span class="badge-accred">Autonomous Institution</span>
+                <span class="badge-accred">AKTU Code: 032</span>
+            </div>
+        </div>
+    </header>
 
-        <div class="login-box">
-
-            <div class="brand-header">
-                <div class="college-logo-icon">🏛️</div>
-                <h1>ABES Engineering College</h1>
-                <p class="affiliation">Approved by AICTE | Affiliated to AKTU, Lucknow</p>
-                <div class="portal-badge">Student Support AI Portal</div>
+    <!-- Main Container with Campus Backdrop -->
+    <main class="login-wrapper">
+        <div class="login-panel">
+            
+            <div class="panel-header">
+                <div class="portal-crest">
+                    <img src="assets/ak-logo.png" alt="AK Portal Emblem" class="crest-img" onerror="this.style.display='none'">
+                </div>
+                <h2>Student Support Portal</h2>
+                <p class="panel-desc">Sign in with your institutional credentials to access academic records and student services.</p>
             </div>
 
-            <form id="loginForm">
-
+            <form id="loginForm" class="academic-form">
                 <div class="form-group">
-                    <label for="studentId">
-                        Student ID / Username
-                    </label>
-                    <input
-                        type="text"
-                        id="studentId"
-                        placeholder="e.g. AK0001 or admin"
-                        autocomplete="username"
+                    <label for="studentId">Student ID / University Roll No</label>
+                    <input 
+                        type="text" 
+                        id="studentId" 
+                        placeholder="e.g. AK0001 or admin" 
+                        autocomplete="username" 
                         required
                     >
                 </div>
 
                 <div class="form-group">
-                    <label for="password">
-                        Password
-                    </label>
-                    <input
-                        type="password"
-                        id="password"
-                        placeholder="Enter your password"
-                        autocomplete="current-password"
+                    <label for="password">Portal Password</label>
+                    <input 
+                        type="password" 
+                        id="password" 
+                        placeholder="Enter your security password" 
+                        autocomplete="current-password" 
                         required
                     >
                 </div>
 
-                <button type="submit" id="submitBtn">
+                <button type="submit" id="submitBtn" class="btn-signin">
                     <span>Sign In to Portal</span>
                 </button>
-
             </form>
 
             <div id="message" class="message-box" style="display: none;"></div>
 
-            <!-- Demo Credentials Helper for Evaluators / Demonstrations -->
-            <div class="demo-card">
-                <p class="demo-title">⚡ Quick Demo Credentials:</p>
-                <div class="demo-chips">
-                    <button type="button" class="demo-btn" onclick="fillCredentials('AK0001', '123456')">
-                        👨‍🎓 Student: <strong>AK0001</strong>
+            <!-- Demo Credentials Helper -->
+            <div class="demo-credentials-box">
+                <span class="demo-label">Demo Credentials:</span>
+                <div class="demo-actions">
+                    <button type="button" class="btn-demo" onclick="fillCredentials('AK0001', '123456')">
+                        Student: <strong>AK0001</strong> / 123456
                     </button>
-                    <button type="button" class="demo-btn" onclick="fillCredentials('admin', 'Admin@123')">
-                        ⚙️ Admin: <strong>admin</strong>
+                    <button type="button" class="btn-demo" onclick="fillCredentials('admin', 'Admin@123')">
+                        Admin: <strong>admin</strong> / Admin@123
                     </button>
                 </div>
             </div>
 
-            <div class="portal-footer">
-                <p>Campus Address: 19th KM Stone, NH-09, Ghaziabad, UP (201009)</p>
-                <p>Direct Support: <a href="mailto:info@abes.ac.in">info@abes.ac.in</a> | Phone: 0120-7135112</p>
+            <div class="portal-help">
+                <p>Need support? Visit the <a href="ai-support.html">AI Student Support Desk</a> or contact <a href="mailto:info@abes.ac.in">info@abes.ac.in</a></p>
             </div>
 
         </div>
+    </main>
 
-    </div>
+    <!-- Institutional Footer -->
+    <footer class="college-footer">
+        <div class="footer-inner">
+            <p><strong>ABES Engineering College</strong> • 19th KM Stone, NH-09, Ghaziabad, Uttar Pradesh (201009)</p>
+            <p class="affiliation-text">Approved by AICTE, New Delhi • Affiliated to Dr. A.P.J. Abdul Kalam Technical University (AKTU), Lucknow</p>
+            <p class="copyright-text">© 2026 ABES Engineering College. All Rights Reserved.</p>
+        </div>
+    </footer>
 
     <script src="login.js"></script>
-
 </body>
 </html>

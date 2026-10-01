@@ -1,0 +1,665 @@
+/* =========================================================
+   ABES ENGINEERING COLLEGE - STUDENT PROFILE STYLES
+   Institutional Aesthetic: Academic Dossier View
+   ========================================================= */
+
+:root {
+    --header-bg: #111111;
+    --college-navy: #0d233a;
+    --college-navy-dark: #071524;
+    --college-blue: #1e3a8a;
+    --college-red: #a51c30;
+    --college-red-hover: #861424;
+    --college-gold: #c59b27;
+    
+    --bg-page: #f4f6f9;
+    --bg-surface: #ffffff;
+    --bg-surface-alt: #f8fafc;
+    
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    
+    --border-color: #e2e8f0;
+    --border-dark: #cbd5e1;
+    
+    --card-shadow: 0 2px 6px rgba(0, 0, 0, 0.04), 0 1px 3px rgba(0, 0, 0, 0.03);
+    --hover-shadow: 0 8px 18px rgba(0, 0, 0, 0.08);
+}
+
+body.theme-dark {
+    --bg-page: #0b0f19;
+    --bg-surface: #111827;
+    --bg-surface-alt: #1f2937;
+    --text-primary: #f9fafb;
+    --text-secondary: #cbd5e1;
+    --text-muted: #9ca3af;
+    --border-color: #374151;
+    --border-dark: #4b5563;
+    --card-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+    --hover-shadow: 0 10px 22px rgba(0, 0, 0, 0.5);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background-color: var(--bg-page);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    line-height: 1.5;
+}
+
+/* =========================================================
+   1. TOP BLACK COLLEGE HEADER (ABES Style)
+   ========================================================= */
+
+.top-nav-bar {
+    background-color: var(--header-bg);
+    color: #ffffff;
+    border-bottom: 3px solid var(--college-red);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35);
+}
+
+.nav-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 10px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+}
+
+.brand-logo-img {
+    height: 48px;
+    width: auto;
+    max-width: 68px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #181c24;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.brand-headings {
+    display: flex;
+    flex-direction: column;
+}
+
+.brand-title {
+    font-family: 'Cinzel', serif;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+}
+
+.brand-subtitle {
+    font-size: 11px;
+    color: #cbd5e1;
+    letter-spacing: 0.3px;
+}
+
+/* Nav Menu */
+.nav-menu {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-item {
+    color: #d1d5db;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 500;
+    padding: 7px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.2px;
+    transition: color 0.15s, background-color 0.15s;
+}
+
+.nav-item:hover {
+    color: #ffffff;
+    background: rgba(255, 255, 255, 0.08);
+}
+
+.nav-item.active {
+    color: #ffffff;
+    background: var(--college-navy);
+    font-weight: 600;
+    border-bottom: 2px solid var(--college-gold);
+}
+
+.nav-item.nav-highlight {
+    background: var(--college-red);
+    color: #ffffff;
+    font-weight: 600;
+}
+
+.nav-item.nav-highlight:hover {
+    background: var(--college-red-hover);
+}
+
+.nav-user-actions {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-left: 10px;
+    border-left: 1px solid rgba(255, 255, 255, 0.18);
+    padding-left: 12px;
+}
+
+.action-btn {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #e5e7eb;
+    text-decoration: none;
+    padding: 6px 11px;
+    border-radius: 4px;
+    font-size: 12px;
+    font-weight: 500;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    transition: all 0.15s;
+}
+
+.action-btn:hover,
+.action-btn.active {
+    background: rgba(255, 255, 255, 0.2);
+    color: #ffffff;
+}
+
+.theme-toggle {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f3f4f6;
+    width: 32px;
+    height: 32px;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+
+.btn-logout {
+    border-color: #f87171;
+    color: #fca5a5;
+    background: rgba(185, 28, 28, 0.18);
+}
+
+.btn-logout:hover {
+    background: var(--college-red);
+    color: #ffffff;
+}
+
+.nav-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.nav-toggle .bar {
+    width: 24px;
+    height: 2px;
+    background: #ffffff;
+}
+
+/* =========================================================
+   2. BREADCRUMB & HEADER BANNER
+   ========================================================= */
+
+.profile-header-banner {
+    background: linear-gradient(135deg, #0d233a 0%, #1e3a8a 100%);
+    color: #ffffff;
+    padding: 30px 24px;
+    border-bottom: 2px solid var(--college-gold);
+}
+
+.banner-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.breadcrumb {
+    font-size: 12px;
+    color: #cbd5e1;
+    margin-bottom: 6px;
+}
+
+.breadcrumb a {
+    color: #fef08a;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+.breadcrumb span {
+    margin: 0 4px;
+}
+
+.profile-header-banner h1 {
+    font-family: 'Cinzel', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+
+.profile-header-banner p {
+    font-size: 13px;
+    color: #e2e8f0;
+}
+
+/* =========================================================
+   3. PROFILE MAIN CONTAINER & DOSSIER CARD
+   ========================================================= */
+
+.profile-main-container {
+    max-width: 1100px;
+    width: 100%;
+    margin: 32px auto 60px;
+    padding: 0 24px;
+    flex: 1;
+}
+
+.profile-dossier-card {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-color);
+    border-top: 4px solid var(--college-navy);
+    border-radius: 4px;
+    box-shadow: var(--card-shadow);
+    overflow: hidden;
+}
+
+.dossier-header-ribbon {
+    background: var(--bg-surface-alt);
+    border-bottom: 1px solid var(--border-color);
+    padding: 16px 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.dossier-tag {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--college-red);
+    letter-spacing: 0.6px;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+}
+
+.ribbon-left h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--college-navy);
+}
+
+body.theme-dark .ribbon-left h2 {
+    color: #93c5fd;
+}
+
+.academic-badge {
+    background: #dcfce7;
+    color: #15803d;
+    font-size: 11px;
+    font-weight: 600;
+    padding: 4px 10px;
+    border-radius: 3px;
+    border: 1px solid #bbf7d0;
+}
+
+/* Dossier Body */
+.dossier-body {
+    display: grid;
+    grid-template-columns: 240px 1fr;
+    gap: 30px;
+    padding: 28px 24px;
+}
+
+.avatar-sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border-right: 1px solid var(--border-color);
+    padding-right: 24px;
+}
+
+.avatar-frame {
+    width: 130px;
+    height: 130px;
+    border-radius: 4px;
+    border: 3px solid var(--college-navy);
+    background: var(--bg-surface-alt);
+    padding: 4px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.student-avatar-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 2px;
+}
+
+.avatar-fallback {
+    font-size: 50px;
+}
+
+.student-id-badge {
+    font-family: 'Cinzel', serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--college-navy);
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    padding: 4px 14px;
+    border-radius: 3px;
+    margin-bottom: 6px;
+}
+
+body.theme-dark .student-id-badge {
+    color: #93c5fd;
+}
+
+.college-code-text {
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+/* Fields Grid */
+.dossier-fields-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.dossier-field {
+    background: var(--bg-surface-alt);
+    border: 1px solid var(--border-color);
+    border-radius: 3px;
+    padding: 12px 14px;
+}
+
+.dossier-field.full-width {
+    grid-column: span 2;
+}
+
+.field-label {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.field-value {
+    display: block;
+    font-size: 14px;
+    color: var(--text-primary);
+    word-break: break-word;
+}
+
+/* Dossier Footer */
+.dossier-footer {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 24px;
+    background: var(--bg-surface-alt);
+}
+
+.dossier-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+}
+
+.btn-profile-action {
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 9px 18px;
+    border-radius: 3px;
+    transition: all 0.15s;
+    display: inline-flex;
+    align-items: center;
+}
+
+.btn-outline {
+    background: var(--bg-surface);
+    border: 1px solid var(--border-dark);
+    color: var(--text-primary);
+}
+
+.btn-outline:hover {
+    border-color: var(--college-navy);
+    color: var(--college-navy);
+}
+
+.btn-primary {
+    background: var(--college-navy);
+    border: 1px solid var(--college-navy-dark);
+    color: #ffffff;
+}
+
+.btn-primary:hover {
+    background: var(--college-red);
+}
+
+/* =========================================================
+   4. INSTITUTIONAL FOOTER
+   ========================================================= */
+
+.institutional-footer {
+    background: var(--header-bg);
+    color: #9ca3af;
+    border-top: 3px solid var(--college-red);
+    padding: 34px 0 18px;
+    margin-top: auto;
+    font-size: 13px;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+.footer-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1.5fr;
+    gap: 36px;
+    margin-bottom: 26px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.footer-logo {
+    height: 38px;
+    width: auto;
+    max-width: 54px;
+    object-fit: contain;
+    background: #181c24;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 2px;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
+.footer-brand h4 {
+    font-family: 'Cinzel', serif;
+    font-size: 15px;
+    color: #ffffff;
+    font-weight: 700;
+}
+
+.footer-address {
+    font-size: 12px;
+    color: #cbd5e1;
+    line-height: 1.6;
+}
+
+.footer-col h5 {
+    font-family: 'Cinzel', serif;
+    font-size: 13px;
+    color: #ffffff;
+    font-weight: 700;
+    margin-bottom: 12px;
+    letter-spacing: 0.3px;
+}
+
+.footer-links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.footer-links a {
+    color: #cbd5e1;
+    text-decoration: none;
+    font-size: 12px;
+    transition: color 0.15s;
+}
+
+.footer-links a:hover {
+    color: var(--college-gold);
+}
+
+.footer-security-text {
+    font-size: 11px;
+    line-height: 1.6;
+    color: #94a3b8;
+}
+
+.footer-bottom {
+    border-top: 1px solid #262626;
+    padding-top: 16px;
+    text-align: center;
+    font-size: 11px;
+    color: #6b7280;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-toggle {
+        display: flex;
+    }
+
+    .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #111111;
+        flex-direction: column;
+        padding: 20px;
+        gap: 16px;
+        border-top: 1px solid #262626;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    .nav-menu.open {
+        display: flex;
+    }
+
+    .nav-list {
+        flex-direction: column;
+        width: 100%;
+        gap: 8px;
+    }
+
+    .nav-item {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-user-actions {
+        width: 100%;
+        justify-content: center;
+        border-left: none;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+        padding-top: 14px;
+        margin-left: 0;
+    }
+
+    .dossier-body {
+        grid-template-columns: 1fr;
+    }
+
+    .avatar-sidebar {
+        border-right: none;
+        border-bottom: 1px solid var(--border-color);
+        padding-right: 0;
+        padding-bottom: 20px;
+    }
+
+    .dossier-fields-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dossier-field.full-width {
+        grid-column: span 1;
+    }
+
+    .dossier-actions {
+        flex-direction: column;
+    }
+
+    .btn-profile-action {
+        justify-content: center;
+    }
+
+    .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}

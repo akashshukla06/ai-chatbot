@@ -1,3 +1,23 @@
+/* =========================================================
+   ABES ENGINEERING COLLEGE - STUDENT PORTAL LOGIN STYLES
+   Official Institutional Aesthetic: Dark Header, Navy/Crimson/Gold
+   ========================================================= */
+
+:root {
+    --header-bg: #111111;
+    --college-navy: #0d233a;
+    --college-navy-dark: #071524;
+    --college-red: #a51c30;
+    --college-red-hover: #861424;
+    --college-gold: #c59b27;
+    --bg-page: #f4f6f9;
+    --text-primary: #1f2937;
+    --text-secondary: #4b5563;
+    --text-muted: #6b7280;
+    --border-light: #e5e7eb;
+    --border-accent: #d1d5db;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -6,197 +26,345 @@
 
 body {
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-    background: radial-gradient(circle at 10% 20%, #1e3a8a 0%, #0f172a 90%);
+    background-color: var(--bg-page);
+    color: var(--text-primary);
     min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================================================
+   TOP INSTITUTIONAL BAR (BLACK / VERY DARK)
+   ========================================================= */
+
+.top-college-bar {
+    background-color: var(--header-bg);
+    color: #ffffff;
+    border-bottom: 3px solid var(--college-red);
+    padding: 14px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.college-brand {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+.college-logo {
+    height: 48px;
+    width: auto;
+    max-width: 68px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #181c24;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 2px;
+    flex-shrink: 0;
+}
+
+.logo-fallback {
+    font-size: 32px;
+}
+
+.brand-titles {
+    display: flex;
+    flex-direction: column;
+}
+
+.college-name {
+    font-family: 'Cinzel', serif;
+    font-size: 19px;
+    font-weight: 700;
+    letter-spacing: 0.6px;
+    color: #ffffff;
+}
+
+.portal-sub {
+    font-size: 11px;
+    color: #cbd5e1;
+    letter-spacing: 0.3px;
+    margin-top: 1px;
+}
+
+.header-accreditation {
+    display: flex;
+    gap: 10px;
+}
+
+.badge-accred {
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    color: #f1f5f9;
+    font-size: 11px;
+    font-weight: 500;
+    padding: 5px 12px;
+    border-radius: 4px;
+    letter-spacing: 0.3px;
+}
+
+/* =========================================================
+   LOGIN MAIN AREA WITH SUBTLE CAMPUS BACKDROP
+   ========================================================= */
+
+.login-wrapper {
+    flex: 1;
+    background: linear-gradient(180deg, rgba(13, 35, 58, 0.72) 0%, rgba(10, 18, 30, 0.82) 100%),
+                url('assets/abes-campus.jpg') no-repeat center 35%;
+    background-size: cover;
     display: flex;
     justify-content: center;
     align-items: center;
-    color: #1e293b;
-    padding: 20px;
+    padding: 40px 20px;
 }
 
-.login-container {
-    width: 100%;
-    max-width: 460px;
-}
-
-.login-box {
+.login-panel {
     background: #ffffff;
-    padding: 36px 32px;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.45);
-    border: 1px solid rgba(255, 255, 255, 0.1);
+    width: 100%;
+    max-width: 440px;
+    border-radius: 6px;
+    border: 1px solid var(--border-light);
+    border-top: 4px solid var(--college-red);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35);
+    padding: 34px 30px;
 }
 
-.brand-header {
+.panel-header {
     text-align: center;
     margin-bottom: 24px;
 }
 
-.college-logo-icon {
-    font-size: 38px;
+.portal-crest {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 12px;
+}
+
+.crest-img {
+    height: 56px;
+    width: auto;
+    max-width: 78px;
+    object-fit: contain;
+    border-radius: 6px;
+    background: #181c24;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.18);
+    padding: 3px;
+}
+
+.panel-header h2 {
+    font-family: 'Cinzel', serif;
+    font-size: 21px;
+    font-weight: 700;
+    color: var(--college-navy);
+    letter-spacing: 0.3px;
     margin-bottom: 6px;
 }
 
-.brand-header h1 {
-    font-size: 21px;
-    font-weight: 700;
-    color: #1e3a8a;
-    letter-spacing: -0.3px;
-    margin-bottom: 4px;
+.panel-desc {
+    font-size: 13px;
+    color: var(--text-muted);
+    line-height: 1.45;
 }
 
-.brand-header .affiliation {
-    font-size: 11px;
-    color: #64748b;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-bottom: 10px;
-}
-
-.portal-badge {
-    display: inline-block;
-    background: #eff6ff;
-    color: #2563eb;
-    font-size: 12px;
-    font-weight: 600;
-    padding: 5px 14px;
-    border-radius: 20px;
-    border: 1px solid #bfdbfe;
+/* Form Styles */
+.academic-form {
+    margin-bottom: 18px;
 }
 
 .form-group {
     margin-bottom: 18px;
 }
 
-.login-box label {
+.form-group label {
     display: block;
-    margin-bottom: 7px;
+    margin-bottom: 6px;
     font-size: 13px;
     font-weight: 600;
-    color: #334155;
+    color: var(--text-primary);
 }
 
-.login-box input {
+.form-group input {
     width: 100%;
-    padding: 12px 14px;
-    border: 1.5px solid #cbd5e1;
-    border-radius: 10px;
+    padding: 11px 13px;
+    border: 1px solid #cbd5e1;
+    border-radius: 4px;
     font-size: 14px;
     font-family: inherit;
-    transition: all 0.2s ease;
-    background: #f8fafc;
+    background: #fbfcfd;
+    transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-.login-box input:focus {
+.form-group input:focus {
     outline: none;
-    border-color: #2563eb;
+    border-color: var(--college-navy);
     background: #ffffff;
-    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    box-shadow: 0 0 0 3px rgba(13, 35, 58, 0.12);
 }
 
-.login-box button[type="submit"] {
+.btn-signin {
     width: 100%;
-    margin-top: 10px;
-    padding: 13px;
-    border: none;
-    border-radius: 10px;
-    background: linear-gradient(135deg, #2563eb, #1d4ed8);
-    color: white;
-    font-size: 15px;
+    background-color: var(--college-navy);
+    color: #ffffff;
+    border: 1px solid var(--college-navy-dark);
+    padding: 12px;
+    border-radius: 4px;
+    font-size: 14px;
     font-weight: 600;
+    letter-spacing: 0.4px;
     cursor: pointer;
-    transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+    transition: background-color 0.2s;
+    margin-top: 6px;
 }
 
-.login-box button[type="submit"]:hover:not(:disabled) {
-    background: linear-gradient(135deg, #1d4ed8, #1e40af);
-    transform: translateY(-1px);
-    box-shadow: 0 6px 16px rgba(37, 99, 235, 0.4);
+.btn-signin:hover {
+    background-color: var(--college-red);
+    border-color: var(--college-red-hover);
 }
 
-.login-box button[type="submit"]:disabled {
-    opacity: 0.65;
+.btn-signin:disabled {
+    opacity: 0.7;
     cursor: not-allowed;
 }
 
+/* Messages */
 .message-box {
-    margin-top: 16px;
-    padding: 12px 14px;
-    border-radius: 8px;
+    margin-top: 14px;
+    padding: 10px 14px;
+    border-radius: 4px;
     font-size: 13px;
-    font-weight: 500;
-    text-align: center;
     line-height: 1.4;
+    text-align: center;
 }
 
 .message-box.error {
     background: #fef2f2;
-    color: #dc2626;
     border: 1px solid #fecaca;
+    color: #b91c1c;
 }
 
 .message-box.success {
     background: #f0fdf4;
-    color: #16a34a;
     border: 1px solid #bbf7d0;
+    color: #15803d;
 }
 
-.demo-card {
-    margin-top: 22px;
-    padding: 14px;
+/* Demo Credentials Box */
+.demo-credentials-box {
+    margin-top: 20px;
+    padding: 12px;
     background: #f8fafc;
-    border-radius: 12px;
     border: 1px dashed #cbd5e1;
+    border-radius: 4px;
 }
 
-.demo-title {
+.demo-label {
+    display: block;
     font-size: 11px;
     font-weight: 700;
-    color: #475569;
+    color: var(--text-muted);
     text-transform: uppercase;
     letter-spacing: 0.5px;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
 }
 
-.demo-chips {
+.demo-actions {
     display: flex;
-    gap: 8px;
+    flex-direction: column;
+    gap: 6px;
 }
 
-.demo-btn {
-    flex: 1;
+.btn-demo {
     background: #ffffff;
     border: 1px solid #e2e8f0;
-    padding: 8px 10px;
-    border-radius: 8px;
+    padding: 6px 10px;
+    border-radius: 3px;
     font-size: 11px;
-    color: #1e293b;
+    color: var(--college-navy);
     cursor: pointer;
-    transition: all 0.15s ease;
-    text-align: center;
+    text-align: left;
+    transition: background 0.15s, border-color 0.15s;
 }
 
-.demo-btn:hover {
+.btn-demo:hover {
     background: #eff6ff;
     border-color: #93c5fd;
-    color: #1d4ed8;
 }
 
-.portal-footer {
-    margin-top: 20px;
+.portal-help {
+    margin-top: 18px;
     text-align: center;
-    font-size: 11px;
-    color: #94a3b8;
-    line-height: 1.5;
+    font-size: 12px;
+    color: var(--text-muted);
 }
 
-.portal-footer a {
-    color: #2563eb;
+.portal-help a {
+    color: var(--college-red);
     text-decoration: none;
+    font-weight: 600;
 }
 
-.portal-footer a:hover {
+.portal-help a:hover {
     text-decoration: underline;
+}
+
+/* =========================================================
+   INSTITUTIONAL FOOTER
+   ========================================================= */
+
+.college-footer {
+    background: var(--header-bg);
+    color: #9ca3af;
+    padding: 22px 0;
+    border-top: 1px solid #262626;
+    text-align: center;
+    font-size: 12px;
+    line-height: 1.6;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.college-footer strong {
+    color: #f3f4f6;
+}
+
+.affiliation-text {
+    font-size: 11px;
+    color: #6b7280;
+    margin-top: 2px;
+}
+
+.copyright-text {
+    font-size: 11px;
+    color: #9ca3af;
+    margin-top: 6px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header-accreditation {
+        display: none;
+    }
+    
+    .college-name {
+        font-size: 16px;
+    }
+
+    .login-panel {
+        padding: 26px 20px;
+    }
 }

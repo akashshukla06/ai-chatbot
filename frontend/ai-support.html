@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABES Student Support | Academic Question & Answer Desk</title>
+    <link rel="stylesheet" href="ai-support.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="theme-light">
+
+    <!-- Top Black College Header (ABES Style) -->
+    <header class="top-nav-bar" id="mainHeader">
+        <div class="nav-container">
+            
+            <!-- Branding -->
+            <a href="dashboard.html" class="nav-brand">
+                <img src="assets/ak-logo.png" alt="AK Logo" class="brand-logo-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='inline';">
+                <span class="brand-logo-fallback" style="display:none;">🎓</span>
+                <div class="brand-headings">
+                    <span class="brand-title">ABES STUDENT SUPPORT AI</span>
+                    <span class="brand-subtitle">Academic & Student Services Portal • Autonomous</span>
+                </div>
+            </a>
+
+            <!-- Mobile Hamburger Toggle -->
+            <button class="nav-toggle" id="navToggleBtn" aria-label="Toggle navigation" onclick="toggleMobileNav()">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </button>
+
+            <!-- Main Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li><a href="dashboard.html" class="nav-item">Home</a></li>
+                    <li><a href="dashboard.html#academics" class="nav-item">Academics</a></li>
+                    <li><a href="dashboard.html#services" class="nav-item">Student Services</a></li>
+                    <li><a href="ai-support.html" class="nav-item active nav-highlight">AI Support</a></li>
+                    <li><a href="dashboard.html#resources" class="nav-item">Resources</a></li>
+                </ul>
+
+                <div class="nav-user-actions">
+                    <a href="profile.html" class="action-btn" title="View Profile">
+                        <span>👤 Profile</span>
+                    </a>
+                    <button class="theme-toggle" id="themeToggleBtn" onclick="toggleTheme()" title="Toggle Light/Dark Theme">
+                        <span id="themeIcon">🌙</span>
+                    </button>
+                    <button class="action-btn btn-logout" id="logoutBtn" onclick="handleLogout()" title="Sign out">
+                        <span>🚪 Logout</span>
+                    </button>
+                </div>
+            </nav>
+
+        </div>
+    </header>
+
+    <!-- Page Title Header (College Academic Banner) -->
+    <section class="support-header-banner">
+        <div class="banner-inner">
+            <span class="sub-badge">INSTITUTIONAL INFORMATION DESK</span>
+            <h1>ABES Student Support Desk</h1>
+            <p>Direct inquiries regarding ABES Engineering College courses, academic calendar, attendance criteria, examinations, scholarships, and campus facilities.</p>
+        </div>
+    </section>
+
+    <!-- Main Consultation Content (Ordered: History -> Quick Questions -> Input) -->
+    <main class="support-main-container">
+
+        <div class="support-desk-card">
+
+            <!-- 1. Header Bar: Title, Status, and Clear History -->
+            <div class="desk-card-header">
+                <div class="header-left">
+                    <h3>Consultation History & Official Responses</h3>
+                    <span class="status-indicator">🟢 AI Knowledge Base Online • ABES Knowledge & Gemini AI</span>
+                </div>
+                <div class="header-right">
+                    <button type="button" class="btn-clear-chat" id="clearChatButton" onclick="clearInquiries()" title="Clear Consultation Log">
+                        <span>🗑️ Clear History</span>
+                    </button>
+                </div>
+            </div>
+
+            <!-- 2. Conversation History (Scrollable Area ABOVE Input) -->
+            <div class="inquiry-stream-box" id="chatBox">
+                <!-- Initial Academic Welcome Record -->
+                <div class="response-record bot-record">
+                    <div class="record-meta">
+                        <span class="responder-tag">🤖 ABES Student Support</span>
+                        <span class="response-time">Official Desk</span>
+                    </div>
+                    <div class="record-body">
+                        <p><strong>Welcome to the ABES Engineering College Student Support Desk.</strong></p>
+                        <p>I am your verified student support assistant. You can inquire about:</p>
+                        <ul class="support-bullet-list">
+                            <li><strong>Academic Programmes:</strong> Approved B.Tech branches, M.Tech, and MCA seats</li>
+                            <li><strong>Admissions & Fees:</strong> Admission criteria, counseling, and verified fee guidelines</li>
+                            <li><strong>Personal Records:</strong> Current semester attendance, enrolled subjects, and exam schedules (for authenticated students)</li>
+                            <li><strong>Campus Services:</strong> Hostels, transport, library resources, and anti-ragging policies</li>
+                        </ul>
+                        <p>Please enter your question below to receive verified institutional guidance.</p>
+                    </div>
+                    <div class="record-source">
+                        <span>🏛️ Source: Official ABES Engineering College Knowledge Base</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 3. Quick Questions (Directly above the Input Area) -->
+            <div class="quick-inquiries-area">
+                <span class="quick-title">Quick Questions:</span>
+                <div class="quick-chips">
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('What courses does ABES offer?')">
+                        🎓 ABES Courses
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('Where can I find the academic calendar?')">
+                        📅 Academic Calendar
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('What examination information is available?')">
+                        📝 Examinations
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('What scholarships are available?')">
+                        💰 Scholarships
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('How can I check my attendance?')">
+                        📊 Attendance
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('Does ABES have hostel facilities?')">
+                        🏢 Hostel & Facilities
+                    </button>
+                    <button type="button" class="chip-button" onclick="askQuickQuestion('What is the placement record of ABES?')">
+                        📈 Placements
+                    </button>
+                </div>
+            </div>
+
+            <!-- 4. Ask Your Question Area (Strictly at the BOTTOM) -->
+            <div class="inquiry-input-area">
+                <div class="input-area-title">Ask Your Question:</div>
+                <div class="input-row">
+                    <input 
+                        type="text" 
+                        id="userInput" 
+                        placeholder="Type your question here (e.g. What courses does ABES offer? Or: What is my attendance?)..." 
+                        autocomplete="off"
+                        aria-label="Student Question Input"
+                    >
+                    <button type="button" id="sendButton" onclick="submitInquiry()">
+                        <span>Ask Question ➤</span>
+                    </button>
+                </div>
+                <p class="input-hint">Press <strong>Enter</strong> to send your question. Verified against official ABES records & academic datasets.</p>
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- Institutional Footer -->
+    <footer class="institutional-footer">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <div class="footer-brand">
+                        <img src="assets/ak-logo.png" alt="AK Crest" class="footer-logo" onerror="this.style.display='none'">
+                        <h4>ABES Engineering College</h4>
+                    </div>
+                    <p class="footer-address">
+                        19th KM Stone, NH-09, Ghaziabad, Uttar Pradesh (201009)<br>
+                        Direct Support: <a href="mailto:info@abes.ac.in">info@abes.ac.in</a> | Phone: 0120-7135112
+                    </p>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Official Links</h5>
+                    <ul class="footer-links">
+                        <li><a href="dashboard.html">Student Dashboard</a></li>
+                        <li><a href="profile.html">Student Profile</a></li>
+                        <li><a href="https://www.abes.ac.in" target="_blank" rel="noopener noreferrer">Official Website ↗</a></li>
+                        <li><a href="https://aktu.ac.in" target="_blank" rel="noopener noreferrer">AKTU University Portal ↗</a></li>
+                    </ul>
+                </div>
+
+                <div class="footer-col">
+                    <h5>Institutional AI Disclaimer</h5>
+                    <p class="footer-security-text">
+                        Responses are synthesized strictly from verified ABES syllabus, academic regulations, official circulars, and student database records. For official administrative certificates, please contact the Registrar's Office.
+                    </p>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>© 2026 ABES Engineering College. All Rights Reserved. Student Support & Academic Portal.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="ai-support.js"></script>
+</body>
+</html>

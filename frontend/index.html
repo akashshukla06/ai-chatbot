@@ -18,16 +18,23 @@
 
         <div class="brand">
 
-            <div class="brand-icon">
-                🎓
+            <div class="brand-icon-wrapper">
+                <img src="assets/ak-logo.png" alt="AK Logo" class="brand-logo" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';" style="height: 48px; width: auto; max-width: 68px; object-fit: contain; border-radius: 6px; background: #181c24; border: 1px solid rgba(255, 255, 255, 0.18); padding: 2px;">
+                <div class="brand-icon" style="display: none;">🎓</div>
             </div>
 
             <div>
                 <h1>ABES Student Support AI</h1>
-                <p>AI-Powered Student Assistance Portal</p>
+                <p>Academic & Student Services Portal</p>
             </div>
 
         </div>
+
+        <nav class="portal-nav-links" style="display: flex; gap: 8px; align-items: center;">
+            <a href="dashboard.html" class="header-button" style="text-decoration: none;">🏠 Dashboard</a>
+            <a href="ai-support.html" class="header-button" style="text-decoration: none; background: #a51c30; color: #ffffff; border-color: #861424;">💬 AI Support Desk</a>
+            <a href="profile.html" class="header-button" style="text-decoration: none;">👤 Profile</a>
+        </nav>
 
 
         <div class="header-actions">
