@@ -8,7 +8,9 @@ const passwordInput = document.getElementById("password");
 const submitBtn = document.getElementById("submitBtn");
 const messageBox = document.getElementById("message");
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = (window.location.protocol.startsWith("http")) 
+    ? window.location.origin 
+    : "http://127.0.0.1:8000";
 
 // Helper to quick-fill credentials for demonstration / testing
 function fillCredentials(id, pass) {

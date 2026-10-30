@@ -2,6 +2,14 @@ import os
 import datetime
 from contextlib import asynccontextmanager
 from typing import Optional, Dict, Any, List
+from dotenv import load_dotenv
+
+# Ensure root .env is loaded automatically regardless of working directory
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env_path = os.path.join(BASE_DIR, ".env")
+if os.path.exists(env_path):
+    load_dotenv(dotenv_path=env_path)
+load_dotenv()
 
 from fastapi import FastAPI, Depends, HTTPException, status, Request
 from fastapi.middleware.cors import CORSMiddleware
@@ -16,6 +24,16 @@ from backend.auth import (
     get_current_admin,
     get_optional_user
 )
+# =========================================================
+# GEMINI API KEY CONFIGURATION (NO TERMINAL COMMAND NEEDED)
+# =========================================================
+# Option 1 (Recommended): Add GEMINI_API_KEY=your_key in your .env file
+# Option 2: Or paste your Gemini API key directly between the quotes below:
+DIRECT_GEMINI_API_KEY = ""
+
+if DIRECT_GEMINI_API_KEY.strip() and not os.getenv("GEMINI_API_KEY"):
+    os.environ["GEMINI_API_KEY"] = DIRECT_GEMINI_API_KEY.strip()
+
 from backend.schemas import LoginRequest, TokenResponse, ChatRequest, ChatResponse
 from backend.chatbot_service import get_answer
 

@@ -2,7 +2,9 @@
 // ABES Student Support AI Portal - Dashboard Controller
 // =========================================================
 
-const API_BASE = "http://127.0.0.1:8000";
+const API_BASE = (window.location.protocol.startsWith("http")) 
+    ? window.location.origin 
+    : "http://127.0.0.1:8000";
 
 let currentStudent = null;
 let token = localStorage.getItem("abes_token");

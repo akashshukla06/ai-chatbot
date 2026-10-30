@@ -13,14 +13,29 @@ from google import genai
 
 from backend.database import get_db_connection
 
-# Load environment variables
+# =========================================================
+# 1. RESOLVE BASE DIRECTORY & LOAD ENVIRONMENT VARIABLES
+# =========================================================
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+env_file = os.path.join(BASE_DIR, ".env")
+if os.path.exists(env_file):
+    load_dotenv(dotenv_path=env_file)
 load_dotenv()
 
 # =========================================================
-# 1. GEMINI API SETUP (RESILIENT & NON-CRASHING)
+# 2. GEMINI API SETUP (RESILIENT & NON-CRASHING)
 # =========================================================
 
+# Option A: Loaded automatically from .env file (Recommended - no terminal typing needed)
 api_key = os.getenv("GEMINI_API_KEY")
+
+# Option B: You can also paste your Gemini API key directly here if preferred:
+DIRECT_API_KEY = ""
+
+if (not api_key or not api_key.strip()) and DIRECT_API_KEY.strip():
+    api_key = DIRECT_API_KEY.strip()
+
 client = None
 
 if api_key and api_key.strip():
@@ -34,10 +49,8 @@ else:
 
 
 # =========================================================
-# 2. RESOLVE BASE DIRECTORY & LOAD DATASETS
+# 3. DATASETS & EMBEDDINGS PATHS
 # =========================================================
-
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 faq_file = os.path.join(BASE_DIR, "dataset", "processed", "university_faq_enriched.csv")
 faq_emb_file = os.path.join(BASE_DIR, "dataset", "processed", "question_embeddings.npy")
@@ -505,17 +518,16 @@ Relevant College Information:
 Now provide the answer to the student.
 """
 
-    for attempt in range(3):
+    for model_name in ["gemini-flash-lite-latest", "gemini-3.5-flash", "gemini-3.7-flash", "gemini-3.8-flash"]:
         try:
             response = client.models.generate_content(
-                model="gemini-3.8-flash",
+                model=model_name,
                 contents=prompt
             )
             if response and response.text:
                 return response.text.strip()
         except Exception as e:
-            if attempt < 2:
-                time.sleep(1.2)
+            continue
 
     return fallback_answer
 
